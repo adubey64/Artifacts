@@ -52,7 +52,7 @@ void Matrix::multiply(const Vector& X, Vector& Y) const
 
   for(int r=0; r<nrows_; r++)
   {
-    Y[r] = 0
+    Y[r] = 0;
     for(int c=0; c<ncols_; c++)
     {
       Y[r] = Y[r] + data_[r][c]*X[c];
