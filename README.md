@@ -5,19 +5,30 @@ A tutorial for ISC 2018
 gcov tutorial
 
 Clone the repository
+
 git clone https://github.com/adubey64/morp.git
+
 Build the tests
+
 cd morph
+
 make
+
 Note that the proper coverage flags have been added to your makefile. Also note that this step generates a set of .gcno files for you.
+
 Run the tests
 ./runtests
+
 runtests is a perl script which runs the three tests for you. This step generates the .gcda files.
-Run gcov on the Morpheus source code
+Run gcov on the morph source code
+
 gcov *.cpp
+
 Ignore the system files; we are not responsible for testing them. This will generate our .gcov files
 Examine Morpheus_Vector.cpp.gcov and Morpheus_Matrix.cpp.gcov
+
 These are regular text files, so you may use your text editor of choice (vim, emacs, eclipse...or you can just cat the file). Lines that have been tested are marked by the number of times they were executed. Lines that have NOT been tested are preceeded by #####. Dashes denote lines that contain no instructions, such as blank lines or curly braces.
+
 Example: 
       5:   85:bool Matrix::isSymmetric() const
       -:   86:{
