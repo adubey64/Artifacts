@@ -30,7 +30,7 @@ Examine Morpheus_Vector.cpp.gcov and Morpheus_Matrix.cpp.gcov
 These are regular text files, so you may use your text editor of choice (vim, emacs, eclipse...or you can just cat the file). Lines that have been tested are marked by the number of times they were executed. Lines that have NOT been tested are preceeded by #####. Dashes denote lines that contain no instructions, such as blank lines or curly braces.
 
 Example: 
-      5:   85:bool Matrix::isSymmetric() const
+      5:   85:bool Matrix::isSymmetric() const \\
       -:   86:{
       5:   87:  if(nrows_ != ncols_)
   #####:   88:    return false;
