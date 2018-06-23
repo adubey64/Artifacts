@@ -19,7 +19,7 @@ Matrix::Matrix(const int nrows, const int ncols)
 
   // Make sure the dimensions make sense
   assert(nrows_ > 0);
-  assert(ncols_ > 0)
+  assert(ncols_ > 0);
 
   // Allocate memory for the data
   data_ = new double*[nrows_];
