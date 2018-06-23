@@ -3,11 +3,17 @@
 A tutorial for ISC 2018
 
 gcov tutorial
-Clone the Morpheus repository
+
+Clone the repository
+
 git clone https://github.com/adubey64/morp.git
+
 Build the tests
+
 cd morph
+
 make
+
 Note that the proper coverage flags have been added to your makefile. Also note that this step generates a set of .gcno files for you.
 Run the tests
 ./runtests
