@@ -16,7 +16,7 @@ Vector::Vector(const int numElements)
 {
   assert(numElements > 0);
 
-  numElements_ = numElements;
+  numElements_ = numElements
 
   // Allocate memory for the data
   data_ = new double[numElements_];
