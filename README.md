@@ -100,10 +100,6 @@ What types of data did I ignore?
 
 What kinds of errors could occur as a result of me ignoring those types of data?
 
-For which of the following vectors would the 1-norm function produce the correct result? The infinity-norm? The 2-norm?
-
-$\left[\begin{array}{r}1\\2\\3\end{array}\right]$ $\left[\begin{array}{r}1\\0\\0\end{array}\right]$ $\left[\begin{array}{r}-1\\0\\0\end{array}\right]$
-
 Which of the following Matrix functions are tested?
 
 Constructor
