@@ -1,0 +1,1505 @@
+ FLASH log file:  10-15-2018  01:03:59.588    Run number:  1
+ ==============================================================================
+ Number of MPI tasks:                 400
+ MPI version:                           3
+ MPI subversion:                        1
+ MPI thread support:                    T
+ OpenMP threads/MPI task:               2
+ OpenMP version:                        201307
+ Is "_OPENMP" macro defined:            T
+ Dimensionality:                        3
+ Max Number of Blocks/Proc:           100
+ Number x zones:                       16
+ Number y zones:                       16
+ Number z zones:                       16
+ Setup stamp:     Sun Oct 14 14:33:51 2018
+ Build stamp:     Mon Oct 15 01:02:47 2018
+ System info:     
+ Linux titan-ext5 3.0.101-0.47.106.29-default #1 SMP Mon May 21 13:04:36 UTC 2018
+ Version:         
+ FLASH 4.4                                                                       
+ Build directory: 
+ /lustre/atlas/scratch/saurabh/ast136/flash-branches/FLASHOR/sn1a-150
+ Setup syntax:    
+ /lustre/atlas/scratch/saurabh/ast136/flash-branches/FLASHOR/bin/setup.py SNIa_DoubleDetonation -auto +cartesian -3d -nxb=16 -nyb=16 -nzb=16 -maxblocks=100 +hdf5 threadBlockList=True xnet=True xnetData=Data_SN160 xnetGPU=False +uhd +newMpole -objdir=sn1a-150 -site=titan.ccs.ornl.gov
+ f compiler flags: 
+ ftn -mp -I/opt/cray/hdf5/1.10.0.3/PGI/15.3/include -DH5_USE_16_API -c -g -gopt -fastsse -r8 -i4 -Mpreprocess -DMAXBLOCKS=100 -DNXB=16 -DNYB=16 -DNZB=16 -DN_DIM=3
+ c compiler flags:    
+ cc -mp -I/opt/cray/hdf5/1.10.0.3/PGI/15.3/include -DH5_USE_16_API -c -g -gopt -fastsse -DMAXBLOCKS=100 -DNXB=16 -DNYB=16 -DNZB=16 -DN_DIM=3
+ ==============================================================================
+ Comment:  FLASH 3 run
+ ==============================================================================
+ FLASH Units used:
+   Driver/DriverMain/Unsplit
+   Driver/DriverMain/multithreaded
+   Grid/GridBoundaryConditions
+   Grid/GridMain/paramesh/interpolation/Paramesh4/prolong
+   Grid/GridMain/paramesh/interpolation/prolong
+   Grid/GridMain/paramesh/paramesh4/Paramesh4dev/PM4_package/headers
+   Grid/GridMain/paramesh/paramesh4/Paramesh4dev/PM4_package/mpi_source
+   Grid/GridMain/paramesh/paramesh4/Paramesh4dev/PM4_package/source
+   
+ Grid/GridMain/paramesh/paramesh4/Paramesh4dev/PM4_package/utilities/multigrid
+   Grid/GridMain/paramesh/paramesh4/Paramesh4dev/flash_avoid_orrery
+   Grid/GridSolvers/Multipole_new
+   Grid/localAPI
+   IO/IOMain/hdf5/serial/PM
+   IO/localAPI
+   Multispecies/MultispeciesMain
+   PhysicalConstants/PhysicalConstantsMain
+   RuntimeParameters/RuntimeParametersMain
+   Simulation/SimulationComposition/Burn/XNet
+   Simulation/SimulationMain/SNIa_DoubleDetonation
+   flashUtilities/contiguousConversion
+   flashUtilities/general
+   flashUtilities/interpolation/oneDim
+   flashUtilities/nameValueLL
+   flashUtilities/sorting/quicksort
+   flashUtilities/system/memoryUsage/legacy
+   monitors/Logfile/LogfileMain
+   monitors/Timers/TimersMain/MPINative
+   physics/Eos/EosMain/Helmholtz/SpeciesBased
+   physics/Eos/localAPI
+   physics/Gravity/GravityMain/Poisson/Multipole
+   physics/Hydro/HydroMain/unsplit/Hydro_Unsplit/threadBlockList
+   physics/Hydro/localAPI
+   physics/sourceTerms/Burn/BurnMain/nuclearBurn/XNet
+ ==============================================================================
+ RuntimeParameters:
+                                                                               
+ ==============================================================================
+algebra                     =          1
+bndpriorityone              =          1
+bndprioritythree            =          3
+bndprioritytwo              =          2
+checkpointfileintervalstep  =          0
+checkpointfilenumber        =          0
+dr_abortpause               =          2
+dr_dtminbelowaction         =          1
+drift_break_inst            =          0
+drift_trunc_mantissa        =          2
+drift_verbose_inst          =          0
+eos_entrelescalechoice      =          6
+eos_loglevel                =        700
+eos_maxnewton               =         50
+fileformatversion           =          9
+forcedplotfilenumber        =          0
+gr_lrefmaxtimevalue_1       =         -1
+gr_lrefmaxtimevalue_10      =         -1
+gr_lrefmaxtimevalue_11      =         -1
+gr_lrefmaxtimevalue_12      =         -1
+gr_lrefmaxtimevalue_13      =         -1
+gr_lrefmaxtimevalue_14      =         -1
+gr_lrefmaxtimevalue_15      =         -1
+gr_lrefmaxtimevalue_16      =         -1
+gr_lrefmaxtimevalue_17      =         -1
+gr_lrefmaxtimevalue_18      =         -1
+gr_lrefmaxtimevalue_19      =         -1
+gr_lrefmaxtimevalue_2       =         -1
+gr_lrefmaxtimevalue_20      =         -1
+gr_lrefmaxtimevalue_3       =         -1
+gr_lrefmaxtimevalue_4       =         -1
+gr_lrefmaxtimevalue_5       =         -1
+gr_lrefmaxtimevalue_6       =         -1
+gr_lrefmaxtimevalue_7       =         -1
+gr_lrefmaxtimevalue_8       =         -1
+gr_lrefmaxtimevalue_9       =         -1
+gr_pmrpdivergencefree       =          1
+gr_pmrpifaceoff             =          0
+gr_pmrpl2p5d                =          0
+gr_pmrpmaxblocks            =         -1
+gr_pmrpmflags               =          1
+gr_pmrpnboundaries          =          6
+gr_pmrpndim                 =          3
+gr_pmrpnedgevar1            =         -1
+gr_pmrpnfacevar             =         -1
+gr_pmrpnfielddivf           =         -1
+gr_pmrpnfluxvar             =         -1
+gr_pmrpnguard               =         -1
+gr_pmrpnguardwork           =         -1
+gr_pmrpnvar                 =         -1
+gr_pmrpnvarwork             =          1
+gr_pmrpnvarcorn             =          0
+gr_pmrpnvaredge             =          0
+gr_pmrpnxb                  =         -1
+gr_pmrpnyb                  =         -1
+gr_pmrpnzb                  =         -1
+gr_restrictallmethod        =          3
+gr_sanitizedatamode         =          0 [CHANGED]
+gr_sanitizeverbosity        =          5
+hy_3torder                  =         -1
+hydrocomputedtoption        =         -1
+iprocs                      =          1
+interpol_order              =          2
+irenorm                     =          0
+jprocs                      =          1
+kprocs                      =          1
+lrefine_del                 =          0
+lrefine_max                 =          6 [CHANGED]
+lrefine_min                 =          1
+lrefine_min_init            =          1
+max_particles_per_blk       =        100
+memory_stat_freq            =     100000
+meshcopycount               =          1
+min_particles_per_blk       =          1
+mpole_innerzonesize         =         16
+mpole_lmax                  =          2 [CHANGED]
+mpole_maxradialzones        =          1
+nbegin                      =          1
+nblockx                     =          8 [CHANGED]
+nblocky                     =          8 [CHANGED]
+nblockz                     =          8 [CHANGED]
+nend                        =         40 [CHANGED]
+nrefs                       =          2
+nsteptotalsts               =          5
+odestepper                  =          1
+order                       =          3 [CHANGED]
+outputsplitnum              =          1
+plotfileintervalstep        =          0
+plotfilenumber              =          0
+refine_var_count            =          2 [CHANGED]
+rolling_checkpoint          =      10000
+sweeporder                  =        123
+transorder                  =          1
+wr_integrals_freq           =          1
+xnet_iconvc                 =          3
+xnet_idiag                  =         -1
+xnet_iheat                  =          1
+xnet_ijac                   =          1
+xnet_iprocess               =          1
+xnet_iscrn                  =          1
+xnet_isolv                  =          3
+xnet_iweak                  =          1
+xnet_kitmx                  =         10
+xnet_kstmx                  =       6000
+xnet_nzbatchmx              =         16
+limitedslopebeta            =                 0.100E+01
+cfl                         =                 0.500E+00 [CHANGED]
+checkpointfileintervaltime  =                 0.100E+00 [CHANGED]
+checkpointfileintervalz     =                 0.180+309
+cvisc                       =                 0.100E+00
+densshell                   =                 0.000E+00
+densshellmult               =                 0.100E+01
+dens_fluff                  =                 0.100E-02
+derefine_cutoff_1           =                 0.200E+00
+derefine_cutoff_2           =                 0.200E+00
+derefine_cutoff_3           =                 0.200E+00
+derefine_cutoff_4           =                 0.200E+00
+dr_dtmincontinue            =                 0.000E+00
+dr_tstepslowstartfactor     =                 0.100E+00
+dtinit                      =                 0.100E-05 [CHANGED]
+dtmax                       =                 0.800E-03 [CHANGED]
+dtmin                       =                 0.100E-19 [CHANGED]
+eintswitch                  =                 0.000E+00
+enucdtfactor                =                 0.100E+01 [CHANGED]
+eos_coulombmult             =                 0.000E+00 [CHANGED]
+eos_fluffdens               =                 0.000E+00
+eos_singlespeciesa          =                 0.100E+01
+eos_singlespeciesz          =                 0.100E+01
+eos_tolerance               =                 0.100E-07
+gamma                       =                 0.167E+01
+gr_lrefinemaxredlogbase     =                 0.100E+02
+gr_lrefinemaxredradiusfact  =                 0.000E+00
+gr_lrefinemaxredtref        =                 0.000E+00
+gr_lrefinemaxredtimescale   =                 0.100E+01
+gr_lrefmaxtime_1            =                -0.100E+01
+gr_lrefmaxtime_10           =                -0.100E+01
+gr_lrefmaxtime_11           =                -0.100E+01
+gr_lrefmaxtime_12           =                -0.100E+01
+gr_lrefmaxtime_13           =                -0.100E+01
+gr_lrefmaxtime_14           =                -0.100E+01
+gr_lrefmaxtime_15           =                -0.100E+01
+gr_lrefmaxtime_16           =                -0.100E+01
+gr_lrefmaxtime_17           =                -0.100E+01
+gr_lrefmaxtime_18           =                -0.100E+01
+gr_lrefmaxtime_19           =                -0.100E+01
+gr_lrefmaxtime_2            =                -0.100E+01
+gr_lrefmaxtime_20           =                -0.100E+01
+gr_lrefmaxtime_3            =                -0.100E+01
+gr_lrefmaxtime_4            =                -0.100E+01
+gr_lrefmaxtime_5            =                -0.100E+01
+gr_lrefmaxtime_6            =                -0.100E+01
+gr_lrefmaxtime_7            =                -0.100E+01
+gr_lrefmaxtime_8            =                -0.100E+01
+gr_lrefmaxtime_9            =                -0.100E+01
+hy_cflfallbackfactor        =                 0.900E+00
+hy_fpresinmomflux           =                 0.100E+01
+hybridorderkappa            =                 0.000E+00
+larget                      =                 0.100E+21
+mpole_innerzoneresolution   =                 0.100E+00
+mpole_zoneexponent_1        =                 0.100E+01
+mpole_zoneexponent_2        =                 0.100E+01
+mpole_zoneexponent_3        =                 0.100E+01
+mpole_zoneexponent_4        =                 0.100E+01
+mpole_zoneradiusfraction_1  =                 0.100E+01
+mpole_zoneradiusfraction_2  =                 0.100E+01
+mpole_zoneradiusfraction_3  =                 0.100E+01
+mpole_zoneradiusfraction_4  =                 0.100E+01
+mpole_zonescalar_1          =                 0.100E+01
+mpole_zonescalar_2          =                 0.100E+01
+mpole_zonescalar_3          =                 0.100E+01
+mpole_zonescalar_4          =                 0.100E+01
+nusts                       =                 0.100E+00
+nucleardensmax              =                 0.100E+15
+nucleardensmin              =                 0.100E-09
+nuclearfuelmax              =                 0.100E+01
+nuclearni56max              =                 0.100E+01
+nucleartempmax              =                 0.100E+13
+nucleartempmin              =                 0.300E+09 [CHANGED]
+plotfileintervaltime        =                 0.100E+05 [CHANGED]
+plotfileintervalz           =                 0.180+309
+point_mass                  =                 0.000E+00
+point_mass_rsoft            =                 0.000E+00
+r_match_inner               =                 0.000E+00
+r_match_outer               =                 0.150E+08 [CHANGED]
+radshellmax                 =                 0.648E+09 [CHANGED]
+radshellmin                 =                 0.383E+09 [CHANGED]
+radiusgp                    =                 0.200E+01
+refine_cutoff_1             =                 0.800E+00
+refine_cutoff_2             =                 0.800E+00
+refine_cutoff_3             =                 0.800E+00
+refine_cutoff_4             =                 0.800E+00
+refine_filter_1             =                 0.100E-01
+refine_filter_2             =                 0.100E-01
+refine_filter_3             =                 0.100E-01
+refine_filter_4             =                 0.100E-01
+rss_limit                   =                -0.100E+01
+sigmagp                     =                 0.300E+01
+small                       =                 0.100E-99 [CHANGED]
+smalle                      =                 0.100E-99 [CHANGED]
+smallp                      =                 0.100E+16 [CHANGED]
+smallt                      =                 0.100E+07 [CHANGED]
+smallu                      =                 0.100E-09
+smallx                      =                 0.100E-99 [CHANGED]
+smlrho                      =                 0.200E-03 [CHANGED]
+t_ignite_inner              =                 0.400E+10
+t_ignite_outer              =                 0.400E+10
+tempshell                   =                 0.000E+00
+tempshellmult               =                 0.100E+01
+temp_fluff                  =                 0.300E+08
+thtshellmax                 =                 0.180E+03 [CHANGED]
+thtshellmin                 =                 0.000E+00
+tinitial                    =                 0.000E+00
+tiny                        =                 0.100E-15
+tmax                        =                 0.600E+00 [CHANGED]
+tstep_change_factor         =                 0.120E+01 [CHANGED]
+wall_clock_checkpoint       =                 0.432E+05
+wall_clock_time_limit       =                 0.605E+06
+x_match                     =                 0.000E+00
+x_refine_center             =                 0.000E+00
+xc12_fluff                  =                 0.500E+00 [CHANGED]
+xc12_shell                  =                 0.000E+00
+xhe4_fluff                  =                 0.000E+00 [CHANGED]
+xhe4_shell                  =                 0.100E+01
+xmax                        =                 0.655E+10 [CHANGED]
+xmin                        =                -0.655E+10 [CHANGED]
+xnet_changemx               =                 0.100E+00
+xnet_changemxt              =                 0.100E-01
+xnet_tdel_maxmult           =                 0.200E+01
+xnet_tolc                   =                 0.100E-03
+xnet_tolm                   =                 0.100E-05
+xnet_tolt9                  =                 0.100E-03
+xnet_yacc                   =                 0.100E-06
+xnet_ymin                   =                 0.100E-24 [CHANGED]
+xni56_fluff                 =                 0.000E+00
+xni56_shell                 =                 0.000E+00
+xo16_fluff                  =                 0.500E+00 [CHANGED]
+y_match                     =                 0.000E+00
+y_refine_center             =                 0.000E+00
+ymax                        =                 0.655E+10 [CHANGED]
+ymin                        =                -0.655E+10 [CHANGED]
+zfinal                      =                 0.000E+00
+zinitial                    =                -0.100E+01
+z_match                     =                 0.000E+00
+z_refine_center             =                 0.000E+00
+zmax                        =                 0.655E+10 [CHANGED]
+zmin                        =                -0.655E+10 [CHANGED]
+riemannsolver               = HLLC                          
+unitsystem                  = none                          
+basenm                      = snd_                           [CHANGED]
+entropyfixmethod            = HARTENHYMAN                   
+eosmode                     = dens_ie                       
+eosmodeinit                 = dens_ie                       
+geometry                    = cartesian                     
+gr_pmrpoutputdir            = ./                            
+gravlocation                = hydro                         
+grav_boundary_type          = isolated                      
+hy_eosmodegc                = see eosMode                   
+initialwdfile               = Profiles/wd_profile_rhoc_415e5 [CHANGED]
+log_file                    = snd.log                        [CHANGED]
+mpole_zonetype_1            = exponential                   
+mpole_zonetype_2            = exponential                   
+mpole_zonetype_3            = exponential                   
+mpole_zonetype_4            = logarithmic                   
+output_directory            =                               
+pc_unitsbase                = CGS                           
+plot_grid_var_1             = none                          
+plot_grid_var_10            = none                          
+plot_grid_var_11            = none                          
+plot_grid_var_12            = none                          
+plot_grid_var_2             = none                          
+plot_grid_var_3             = none                          
+plot_grid_var_4             = none                          
+plot_grid_var_5             = none                          
+plot_grid_var_6             = none                          
+plot_grid_var_7             = none                          
+plot_grid_var_8             = none                          
+plot_grid_var_9             = none                          
+plot_var_1                  = pres                           [CHANGED]
+plot_var_10                 = none                          
+plot_var_100                = none                          
+plot_var_101                = none                          
+plot_var_102                = none                          
+plot_var_103                = none                          
+plot_var_104                = none                          
+plot_var_105                = none                          
+plot_var_106                = none                          
+plot_var_107                = none                          
+plot_var_108                = none                          
+plot_var_109                = none                          
+plot_var_11                 = none                          
+plot_var_110                = none                          
+plot_var_111                = none                          
+plot_var_112                = none                          
+plot_var_113                = none                          
+plot_var_114                = none                          
+plot_var_115                = none                          
+plot_var_116                = none                          
+plot_var_117                = none                          
+plot_var_118                = none                          
+plot_var_119                = none                          
+plot_var_12                 = none                          
+plot_var_120                = none                          
+plot_var_121                = none                          
+plot_var_122                = none                          
+plot_var_123                = none                          
+plot_var_124                = none                          
+plot_var_125                = none                          
+plot_var_126                = none                          
+plot_var_127                = none                          
+plot_var_128                = none                          
+plot_var_129                = none                          
+plot_var_13                 = none                          
+plot_var_130                = none                          
+plot_var_131                = none                          
+plot_var_132                = none                          
+plot_var_133                = none                          
+plot_var_134                = none                          
+plot_var_135                = none                          
+plot_var_136                = none                          
+plot_var_137                = none                          
+plot_var_138                = none                          
+plot_var_139                = none                          
+plot_var_14                 = none                          
+plot_var_140                = none                          
+plot_var_141                = none                          
+plot_var_142                = none                          
+plot_var_143                = none                          
+plot_var_144                = none                          
+plot_var_145                = none                          
+plot_var_146                = none                          
+plot_var_147                = none                          
+plot_var_148                = none                          
+plot_var_149                = none                          
+plot_var_15                 = none                          
+plot_var_150                = none                          
+plot_var_151                = none                          
+plot_var_152                = none                          
+plot_var_153                = none                          
+plot_var_154                = none                          
+plot_var_155                = none                          
+plot_var_156                = none                          
+plot_var_157                = none                          
+plot_var_158                = none                          
+plot_var_159                = none                          
+plot_var_16                 = none                          
+plot_var_160                = none                          
+plot_var_161                = none                          
+plot_var_162                = none                          
+plot_var_163                = none                          
+plot_var_164                = none                          
+plot_var_165                = none                          
+plot_var_166                = none                          
+plot_var_167                = none                          
+plot_var_168                = none                          
+plot_var_169                = none                          
+plot_var_17                 = none                          
+plot_var_170                = none                          
+plot_var_171                = none                          
+plot_var_172                = none                          
+plot_var_173                = none                          
+plot_var_174                = none                          
+plot_var_175                = none                          
+plot_var_176                = none                          
+plot_var_177                = none                          
+plot_var_178                = none                          
+plot_var_18                 = none                          
+plot_var_19                 = none                          
+plot_var_2                  = dens                           [CHANGED]
+plot_var_20                 = none                          
+plot_var_21                 = none                          
+plot_var_22                 = none                          
+plot_var_23                 = none                          
+plot_var_24                 = none                          
+plot_var_25                 = none                          
+plot_var_26                 = none                          
+plot_var_27                 = none                          
+plot_var_28                 = none                          
+plot_var_29                 = none                          
+plot_var_3                  = temp                           [CHANGED]
+plot_var_30                 = none                          
+plot_var_31                 = none                          
+plot_var_32                 = none                          
+plot_var_33                 = none                          
+plot_var_34                 = none                          
+plot_var_35                 = none                          
+plot_var_36                 = none                          
+plot_var_37                 = none                          
+plot_var_38                 = none                          
+plot_var_39                 = none                          
+plot_var_4                  = enuc                           [CHANGED]
+plot_var_40                 = none                          
+plot_var_41                 = none                          
+plot_var_42                 = none                          
+plot_var_43                 = none                          
+plot_var_44                 = none                          
+plot_var_45                 = none                          
+plot_var_46                 = none                          
+plot_var_47                 = none                          
+plot_var_48                 = none                          
+plot_var_49                 = none                          
+plot_var_5                  = velx                           [CHANGED]
+plot_var_50                 = none                          
+plot_var_51                 = none                          
+plot_var_52                 = none                          
+plot_var_53                 = none                          
+plot_var_54                 = none                          
+plot_var_55                 = none                          
+plot_var_56                 = none                          
+plot_var_57                 = none                          
+plot_var_58                 = none                          
+plot_var_59                 = none                          
+plot_var_6                  = vely                           [CHANGED]
+plot_var_60                 = none                          
+plot_var_61                 = none                          
+plot_var_62                 = none                          
+plot_var_63                 = none                          
+plot_var_64                 = none                          
+plot_var_65                 = none                          
+plot_var_66                 = none                          
+plot_var_67                 = none                          
+plot_var_68                 = none                          
+plot_var_69                 = none                          
+plot_var_7                  = velz                           [CHANGED]
+plot_var_70                 = none                          
+plot_var_71                 = none                          
+plot_var_72                 = none                          
+plot_var_73                 = none                          
+plot_var_74                 = none                          
+plot_var_75                 = none                          
+plot_var_76                 = none                          
+plot_var_77                 = none                          
+plot_var_78                 = none                          
+plot_var_79                 = none                          
+plot_var_8                  = none                          
+plot_var_80                 = none                          
+plot_var_81                 = none                          
+plot_var_82                 = none                          
+plot_var_83                 = none                          
+plot_var_84                 = none                          
+plot_var_85                 = none                          
+plot_var_86                 = none                          
+plot_var_87                 = none                          
+plot_var_88                 = none                          
+plot_var_89                 = none                          
+plot_var_9                  = none                          
+plot_var_90                 = none                          
+plot_var_91                 = none                          
+plot_var_92                 = none                          
+plot_var_93                 = none                          
+plot_var_94                 = none                          
+plot_var_95                 = none                          
+plot_var_96                 = none                          
+plot_var_97                 = none                          
+plot_var_98                 = none                          
+plot_var_99                 = none                          
+prof_file                   = profile.dat                   
+refine_var_1                = dens                           [CHANGED]
+refine_var_2                = pres                           [CHANGED]
+refine_var_3                = none                          
+refine_var_4                = none                          
+run_comment                 = FLASH 3 run                   
+run_number                  = 1                             
+slopelimiter                = hybrid                         [CHANGED]
+stats_file                  = flash.dat                     
+wenomethod                  = WENO5                         
+xl_boundary_type            = outflow                        [CHANGED]
+xnet_data_dir               = Networks/Data_SN160           
+xr_boundary_type            = outflow                        [CHANGED]
+yl_boundary_type            = outflow                        [CHANGED]
+yr_boundary_type            = outflow                        [CHANGED]
+zl_boundary_type            = outflow                        [CHANGED]
+zr_boundary_type            = outflow                        [CHANGED]
+eosforriemann               =  F
+addthermalflux              =  T
+allowdtstsdominate          =  F
+alwayscomputeuservars       =  T
+alwaysrestrictcheckpoint    =  T
+burningrav                  =  F
+charlimiting                =  T
+chkguardcellsinput          =  F
+chkguardcellsoutput         =  F
+conserveangmom              =  F
+converttoconsvdformeshcalls =  F
+converttoconsvdinmeshinterp =  T
+corners                     =  F
+dr_printtsteploc            =  T
+dr_shortenlaststepbeforetmax =  T [CHANGED]
+drift_tuples                =  F
+eachprocwritesownabortlog   =  F
+eachprocwritessummary       =  F
+earlyblockdistadjustment    =  T
+enablemaskedgcfill          =  F
+entropy                     =  F
+eos_coulombabort            =  T
+eos_forceconstantinput      =  T [CHANGED]
+flux_correct                =  T
+geometryoverride            =  F
+gr_bcenableapplymixedgds    =  T
+gr_lrefinemaxbytime         =  F
+gr_lrefinemaxreddobylogr    =  F
+gr_lrefinemaxreddobytime    =  F
+gr_pmrpadvancealllevels     =  F
+gr_pmrpamrerrorchecking     =  F
+gr_pmrpcartesianpm          =  F
+gr_pmrpconserve             =  F
+gr_pmrpconsvfluxdensities   =  T
+gr_pmrpconsvfluxes          =  F
+gr_pmrpcurvilinear          =  F
+gr_pmrpcurvilinearconserve  =  F
+gr_pmrpcylindricalpm        =  F
+gr_pmrpdiagonals            =  T
+gr_pmrpedgevalue            =  T
+gr_pmrpedgevalueinteg       =  F
+gr_pmrpemptycells           =  F
+gr_pmrpforceconsistency     =  T
+gr_pmrplsingularline        =  F
+gr_pmrpnopermanentguardcells =  F
+gr_pmrppolarpm              =  F
+gr_pmrppredcorr             =  F
+gr_pmrpsphericalpm          =  F
+gr_pmrptimingmpi            =  F
+gr_pmrptimingmpix           =  F
+gr_pmrpvardt                =  F
+gravburnbarrier             =  F
+grav_temporal_extrp         =  F
+grav_unjunkpden             =  T
+hy_fallbacklowercfl         =  F
+hy_fullspecmsfluxhandling   =  T
+ignite                      =  T [CHANGED]
+ignoreforcedplot            =  F
+io_writemscalarintegrals    =  F
+mpole_2dsymmetryplane       =  F
+mpole_3daxisymmetry         =  F
+mpole_dumpmoments           =  F
+mpole_ignoreinnerzone       =  F
+mpole_multithreading        =  T
+mpole_printradialinfo       =  F
+plotfilegridquantitydp      =  F
+plotfilemetadatadp          =  F
+reducegcellfills            =  F
+refine_on_particle_count    =  F
+restart                     =  F
+shockdetect                 =  T [CHANGED]
+shocklowercfl               =  F
+summaryoutputonly           =  F
+threadblocklistbuild        =  T
+threaddriverblocklist       =  T
+threaddriverwithinblock     =  F
+threadeoswithinblock        =  F
+threadhydroblocklist        =  T
+threadhydrowithinblock      =  F
+threadraytracebuild         =  F
+threadwithinblockbuild      =  F
+typematchedxfer             =  T
+unbiased_geometry           =  F
+updategravity               =  T
+updatehydrofluxes           =  T
+useburn                     =  T [CHANGED]
+useburntable                =  F
+usecollectivehdf5           =  T
+useconductivity             =  F
+usecool                     =  F
+usecosmology                =  F
+usedeleptonize              =  F
+usediffuse                  =  F
+usediffusecomputedtspecies  =  F
+usediffusecomputedttherm    =  F
+usediffusecomputedtvisc     =  F
+usediffusecomputedtmagnetic =  F
+useenergydeposition         =  F
+useflame                    =  F
+usegravity                  =  T
+useheat                     =  F
+useheatexchange             =  F
+usehydro                    =  T
+useincompns                 =  F
+useionize                   =  F
+uselegacylabels             =  T
+usemagneticresistivity      =  F
+usemassdiffusivity          =  F
+useopacity                  =  F
+useparticles                =  F
+useplasmastate              =  F
+usepolytrope                =  F
+useprimordialchemistry      =  F
+useprotonemission           =  F
+useprotonimaging            =  F
+useradtrans                 =  F
+usests                      =  F
+usestsfordiffusion          =  F
+useshell                    =  F
+useshockburn                =  F
+usestir                     =  F
+usethomsonscattering        =  F
+usetreeray                  =  F
+useturb                     =  T
+useviscosity                =  F
+use_3dfullctu               =  T
+use_auxeinteqn              =  T
+use_avisc                   =  T [CHANGED]
+use_cma_advection           =  T [CHANGED]
+use_cma_flattening          =  T [CHANGED]
+use_flash_surr_blks_fill    =  T
+use_flattening              =  T [CHANGED]
+use_gravhalfupdate          =  T
+use_hybridorder             =  F
+use_reduced_orrery          =  T
+use_steepening              =  T [CHANGED]
+use_upwindtvd               =  F
+writestatsummary            =  T
+xnet_writetimers            =  T [CHANGED]
+                                                                               
+ ==============================================================================
+                                                                               
+ WARNING: Ignored Parameters :
+ These parameters were found in the flash.par file, but they were
+ not declared in any Config file for the simulation!
+                                                                               
+ gr_sanitizeVervosity
+ eos_useStarkiller
+ eos_vecLenACC
+ hybrid_riemann
+                                                                               
+ ==============================================================================
+                                                                               
+ Known units of measurement:
+                                                                               
+              Unit                          CGS Value                Base Unit
+  1                  cm                     1.0000                           cm
+  2                   s                     1.0000                            s
+  3                   g                     1.0000                            g
+  4                   K                     1.0000                            K
+  5                 esu                     1.0000                          esu
+  6                 mol                     1.0000                          mol
+  7                   m                     100.00                           cm
+  8                  km                    1.00000E+05                       cm
+  9                  pc                    3.08568E+18                       cm
+ 10                 kpc                    3.08568E+21                       cm
+ 11                 Mpc                    3.08568E+24                       cm
+ 12                 Gpc                    3.08568E+27                       cm
+ 13                Rsun                    6.96000E+10                       cm
+ 14                  AU                    1.49598E+13                       cm
+ 15                  yr                    3.15569E+07                        s
+ 16                 Myr                    3.15569E+13                        s
+ 17                 Gyr                    3.15569E+16                        s
+ 18                  kg                     1000.0                            g
+ 19                Msun                    1.98892E+33                        g
+ 20                 amu                    1.66054E-24                        g
+ 21                  eV                     11605.                            K
+ 22                   C                    2.99792E+09                      esu
+ 23                LFLY                    3.08568E+24                       cm
+ 24                TFLY                    2.05759E+17                        s
+ 25                MFLY                    9.88470E+45                        g
+ 26            clLength                    3.08568E+24                       cm
+ 27              clTime                    3.15569E+16                        s
+ 28              clMass                    1.98892E+48                        g
+ 29              clTemp                    1.16045E+07                        K
+-----------End of Units--------------------
+                                                                               
+ Known physical constants:
+                                                                               
+    Constant Name       Constant Value   cm       s        g        K        esu      mol
+  1              Newton    6.67408E-08   3.0     -2.0     -1.0      0.0      0.0      0.0    
+  2      speed of light    2.99792E+10   1.0     -1.0      0.0      0.0      0.0      0.0    
+  3              Planck    6.62607E-27   2.0     -1.0      1.0      0.0      0.0      0.0    
+  4     electron charge    4.80320E-10   0.0      0.0      0.0      0.0      1.0      0.0    
+  5       electron mass    9.10938E-28   0.0      0.0      1.0      0.0      0.0      0.0    
+  6         proton mass    1.67262E-24   0.0      0.0      1.0      0.0      0.0      0.0    
+  7      fine-structure    7.29735E-03   0.0      0.0      0.0      0.0      0.0      0.0    
+  8            Avogadro    6.02214E+23   0.0      0.0      0.0      0.0      0.0     -1.0    
+  9           Boltzmann    1.38065E-16   2.0     -2.0      1.0     -1.0      0.0      0.0    
+ 10  ideal gas constant    8.31446E+07   2.0     -2.0      1.0     -1.0      0.0     -1.0    
+ 11                Wien    0.28978       1.0      0.0      0.0      1.0      0.0      0.0    
+ 12    Stefan-Boltzmann    5.67037E-05   0.0     -3.0      1.0     -4.0      0.0      0.0    
+ 13  Radiation Constant    7.56572E-15  -1.0     -2.0      1.0     -4.0      0.0      0.0    
+ 14                  pi     3.1416       0.0      0.0      0.0      0.0      0.0      0.0    
+ 15                   e     2.7183       0.0      0.0      0.0      0.0      0.0      0.0    
+ 16               Euler    0.57722       0.0      0.0      0.0      0.0      0.0      0.0    
+ ==============================================================================
+                                                                               
+ Multifluid database contents:
+                                                                               
+Initially defined values of species:
+Name     Index          Total   Positive  Neutral   Negative  bind Ener Gamma   eosType
+al25        19       2.50E+01  1.30E+01  1.20E+01  1.30E+01  2.01E+02 -9.99E+02  -999
+al26        20       2.60E+01  1.30E+01  1.30E+01  1.30E+01  2.12E+02 -9.99E+02  -999
+al27        21       2.70E+01  1.30E+01  1.40E+01  1.30E+01  2.25E+02 -9.99E+02  -999
+ar36        22       3.60E+01  1.80E+01  1.80E+01  1.80E+01  3.07E+02 -9.99E+02  -999
+ar37        23       3.70E+01  1.80E+01  1.90E+01  1.80E+01  3.16E+02 -9.99E+02  -999
+ar38        24       3.80E+01  1.80E+01  2.00E+01  1.80E+01  3.27E+02 -9.99E+02  -999
+ar39        25       3.90E+01  1.80E+01  2.10E+01  1.80E+01  3.34E+02 -9.99E+02  -999
+ar40        26       4.00E+01  1.80E+01  2.20E+01  1.80E+01  3.44E+02 -9.99E+02  -999
+b10         27       1.00E+01  5.00E+00  5.00E+00  5.00E+00  6.48E+01 -9.99E+02  -999
+b11         28       1.10E+01  5.00E+00  6.00E+00  5.00E+00  7.62E+01 -9.99E+02  -999
+b8          29       8.00E+00  5.00E+00  3.00E+00  5.00E+00  3.77E+01 -9.99E+02  -999
+be7         30       7.00E+00  4.00E+00  3.00E+00  4.00E+00  3.76E+01 -9.99E+02  -999
+be9         31       9.00E+00  4.00E+00  5.00E+00  4.00E+00  5.82E+01 -9.99E+02  -999
+c12         32       1.20E+01  6.00E+00  6.00E+00  6.00E+00  9.22E+01 -9.99E+02  -999
+c13         33       1.30E+01  6.00E+00  7.00E+00  6.00E+00  9.71E+01 -9.99E+02  -999
+c14         34       1.40E+01  6.00E+00  8.00E+00  6.00E+00  1.05E+02 -9.99E+02  -999
+ca40        35       4.00E+01  2.00E+01  2.00E+01  2.00E+01  3.42E+02 -9.99E+02  -999
+ca41        36       4.10E+01  2.00E+01  2.10E+01  2.00E+01  3.50E+02 -9.99E+02  -999
+ca42        37       4.20E+01  2.00E+01  2.20E+01  2.00E+01  3.62E+02 -9.99E+02  -999
+ca43        38       4.30E+01  2.00E+01  2.30E+01  2.00E+01  3.70E+02 -9.99E+02  -999
+ca44        39       4.40E+01  2.00E+01  2.40E+01  2.00E+01  3.81E+02 -9.99E+02  -999
+ca45        40       4.50E+01  2.00E+01  2.50E+01  2.00E+01  3.88E+02 -9.99E+02  -999
+ca46        41       4.60E+01  2.00E+01  2.60E+01  2.00E+01  3.99E+02 -9.99E+02  -999
+ca47        42       4.70E+01  2.00E+01  2.70E+01  2.00E+01  4.06E+02 -9.99E+02  -999
+ca48        43       4.80E+01  2.00E+01  2.80E+01  2.00E+01  4.16E+02 -9.99E+02  -999
+cl33        44       3.30E+01  1.70E+01  1.60E+01  1.70E+01  2.74E+02 -9.99E+02  -999
+cl34        45       3.40E+01  1.70E+01  1.70E+01  1.70E+01  2.86E+02 -9.99E+02  -999
+cl35        46       3.50E+01  1.70E+01  1.80E+01  1.70E+01  2.98E+02 -9.99E+02  -999
+cl36        47       3.60E+01  1.70E+01  1.90E+01  1.70E+01  3.07E+02 -9.99E+02  -999
+cl37        48       3.70E+01  1.70E+01  2.00E+01  1.70E+01  3.17E+02 -9.99E+02  -999
+co53        49       5.30E+01  2.70E+01  2.60E+01  2.70E+01  4.49E+02 -9.99E+02  -999
+co54        50       5.40E+01  2.70E+01  2.70E+01  2.70E+01  4.63E+02 -9.99E+02  -999
+co55        51       5.50E+01  2.70E+01  2.80E+01  2.70E+01  4.77E+02 -9.99E+02  -999
+co56        52       5.60E+01  2.70E+01  2.90E+01  2.70E+01  4.87E+02 -9.99E+02  -999
+co57        53       5.70E+01  2.70E+01  3.00E+01  2.70E+01  4.98E+02 -9.99E+02  -999
+co58        54       5.80E+01  2.70E+01  3.10E+01  2.70E+01  5.07E+02 -9.99E+02  -999
+co59        55       5.90E+01  2.70E+01  3.20E+01  2.70E+01  5.17E+02 -9.99E+02  -999
+cr48        56       4.80E+01  2.40E+01  2.40E+01  2.40E+01  4.11E+02 -9.99E+02  -999
+cr49        57       4.90E+01  2.40E+01  2.50E+01  2.40E+01  4.22E+02 -9.99E+02  -999
+cr50        58       5.00E+01  2.40E+01  2.60E+01  2.40E+01  4.35E+02 -9.99E+02  -999
+cr51        59       5.10E+01  2.40E+01  2.70E+01  2.40E+01  4.44E+02 -9.99E+02  -999
+cr52        60       5.20E+01  2.40E+01  2.80E+01  2.40E+01  4.56E+02 -9.99E+02  -999
+cr53        61       5.30E+01  2.40E+01  2.90E+01  2.40E+01  4.64E+02 -9.99E+02  -999
+cr54        62       5.40E+01  2.40E+01  3.00E+01  2.40E+01  4.74E+02 -9.99E+02  -999
+cu57        63       5.70E+01  2.90E+01  2.80E+01  2.90E+01  4.85E+02 -9.99E+02  -999
+cu58        64       5.80E+01  2.90E+01  2.90E+01  2.90E+01  4.97E+02 -9.99E+02  -999
+cu59        65       5.90E+01  2.90E+01  3.00E+01  2.90E+01  5.10E+02 -9.99E+02  -999
+cu60        66       6.00E+01  2.90E+01  3.10E+01  2.90E+01  5.20E+02 -9.99E+02  -999
+cu61        67       6.10E+01  2.90E+01  3.20E+01  2.90E+01  5.32E+02 -9.99E+02  -999
+cu62        68       6.20E+01  2.90E+01  3.30E+01  2.90E+01  5.41E+02 -9.99E+02  -999
+cu63        69       6.30E+01  2.90E+01  3.40E+01  2.90E+01  5.51E+02 -9.99E+02  -999
+cu64        70       6.40E+01  2.90E+01  3.50E+01  2.90E+01  5.59E+02 -9.99E+02  -999
+cu65        71       6.50E+01  2.90E+01  3.60E+01  2.90E+01  5.69E+02 -9.99E+02  -999
+d           72       2.00E+00  1.00E+00  1.00E+00  1.00E+00  2.22E+00 -9.99E+02  -999
+f17         73       1.70E+01  9.00E+00  8.00E+00  9.00E+00  1.28E+02 -9.99E+02  -999
+f18         74       1.80E+01  9.00E+00  9.00E+00  9.00E+00  1.37E+02 -9.99E+02  -999
+f19         75       1.90E+01  9.00E+00  1.00E+01  9.00E+00  1.48E+02 -9.99E+02  -999
+fe52        76       5.20E+01  2.60E+01  2.60E+01  2.60E+01  4.48E+02 -9.99E+02  -999
+fe53        77       5.30E+01  2.60E+01  2.70E+01  2.60E+01  4.58E+02 -9.99E+02  -999
+fe54        78       5.40E+01  2.60E+01  2.80E+01  2.60E+01  4.72E+02 -9.99E+02  -999
+fe55        79       5.50E+01  2.60E+01  2.90E+01  2.60E+01  4.81E+02 -9.99E+02  -999
+fe56        80       5.60E+01  2.60E+01  3.00E+01  2.60E+01  4.92E+02 -9.99E+02  -999
+fe57        81       5.70E+01  2.60E+01  3.10E+01  2.60E+01  5.00E+02 -9.99E+02  -999
+fe58        82       5.80E+01  2.60E+01  3.20E+01  2.60E+01  5.10E+02 -9.99E+02  -999
+ga62        83       6.20E+01  3.10E+01  3.10E+01  3.10E+01  5.28E+02 -9.99E+02  -999
+ga63        84       6.30E+01  3.10E+01  3.20E+01  3.10E+01  5.41E+02 -9.99E+02  -999
+ga64        85       6.40E+01  3.10E+01  3.30E+01  3.10E+01  5.51E+02 -9.99E+02  -999
+ge63        86       6.30E+01  3.20E+01  3.10E+01  3.20E+01  5.30E+02 -9.99E+02  -999
+ge64        87       6.40E+01  3.20E+01  3.20E+01  3.20E+01  5.46E+02 -9.99E+02  -999
+he3         88       3.00E+00  2.00E+00  1.00E+00  2.00E+00  7.72E+00 -9.99E+02  -999
+he4         89       4.00E+00  2.00E+00  2.00E+00  2.00E+00  2.83E+01 -9.99E+02  -999
+k37         90       3.70E+01  1.90E+01  1.80E+01  1.90E+01  3.09E+02 -9.99E+02  -999
+k38         91       3.80E+01  1.90E+01  1.90E+01  1.90E+01  3.21E+02 -9.99E+02  -999
+k39         92       3.90E+01  1.90E+01  2.00E+01  1.90E+01  3.34E+02 -9.99E+02  -999
+k40         93       4.00E+01  1.90E+01  2.10E+01  1.90E+01  3.42E+02 -9.99E+02  -999
+k41         94       4.10E+01  1.90E+01  2.20E+01  1.90E+01  3.52E+02 -9.99E+02  -999
+li6         95       6.00E+00  3.00E+00  3.00E+00  3.00E+00  3.20E+01 -9.99E+02  -999
+li7         96       7.00E+00  3.00E+00  4.00E+00  3.00E+00  3.92E+01 -9.99E+02  -999
+mg23        97       2.30E+01  1.20E+01  1.10E+01  1.20E+01  1.82E+02 -9.99E+02  -999
+mg24        98       2.40E+01  1.20E+01  1.20E+01  1.20E+01  1.98E+02 -9.99E+02  -999
+mg25        99       2.50E+01  1.20E+01  1.30E+01  1.20E+01  2.06E+02 -9.99E+02  -999
+mg26       100       2.60E+01  1.20E+01  1.40E+01  1.20E+01  2.17E+02 -9.99E+02  -999
+mn50       101       5.00E+01  2.50E+01  2.50E+01  2.50E+01  4.27E+02 -9.99E+02  -999
+mn51       102       5.10E+01  2.50E+01  2.60E+01  2.50E+01  4.40E+02 -9.99E+02  -999
+mn52       103       5.20E+01  2.50E+01  2.70E+01  2.50E+01  4.51E+02 -9.99E+02  -999
+mn53       104       5.30E+01  2.50E+01  2.80E+01  2.50E+01  4.63E+02 -9.99E+02  -999
+mn54       105       5.40E+01  2.50E+01  2.90E+01  2.50E+01  4.72E+02 -9.99E+02  -999
+mn55       106       5.50E+01  2.50E+01  3.00E+01  2.50E+01  4.82E+02 -9.99E+02  -999
+n          107       1.00E+00  0.00E+00  1.00E+00  0.00E+00  0.00E+00 -9.99E+02  -999
+n13        108       1.30E+01  7.00E+00  6.00E+00  7.00E+00  9.41E+01 -9.99E+02  -999
+n14        109       1.40E+01  7.00E+00  7.00E+00  7.00E+00  1.05E+02 -9.99E+02  -999
+n15        110       1.50E+01  7.00E+00  8.00E+00  7.00E+00  1.15E+02 -9.99E+02  -999
+na21       111       2.10E+01  1.10E+01  1.00E+01  1.10E+01  1.63E+02 -9.99E+02  -999
+na22       112       2.20E+01  1.10E+01  1.10E+01  1.10E+01  1.74E+02 -9.99E+02  -999
+na23       113       2.30E+01  1.10E+01  1.20E+01  1.10E+01  1.87E+02 -9.99E+02  -999
+ne18       114       1.80E+01  1.00E+01  8.00E+00  1.00E+01  1.32E+02 -9.99E+02  -999
+ne19       115       1.90E+01  1.00E+01  9.00E+00  1.00E+01  1.44E+02 -9.99E+02  -999
+ne20       116       2.00E+01  1.00E+01  1.00E+01  1.00E+01  1.61E+02 -9.99E+02  -999
+ne21       117       2.10E+01  1.00E+01  1.10E+01  1.00E+01  1.67E+02 -9.99E+02  -999
+ne22       118       2.20E+01  1.00E+01  1.20E+01  1.00E+01  1.78E+02 -9.99E+02  -999
+ni56       119       5.60E+01  2.80E+01  2.80E+01  2.80E+01  4.84E+02 -9.99E+02  -999
+ni57       120       5.70E+01  2.80E+01  2.90E+01  2.80E+01  4.94E+02 -9.99E+02  -999
+ni58       121       5.80E+01  2.80E+01  3.00E+01  2.80E+01  5.06E+02 -9.99E+02  -999
+ni59       122       5.90E+01  2.80E+01  3.10E+01  2.80E+01  5.15E+02 -9.99E+02  -999
+ni60       123       6.00E+01  2.80E+01  3.20E+01  2.80E+01  5.27E+02 -9.99E+02  -999
+ni61       124       6.10E+01  2.80E+01  3.30E+01  2.80E+01  5.35E+02 -9.99E+02  -999
+ni62       125       6.20E+01  2.80E+01  3.40E+01  2.80E+01  5.45E+02 -9.99E+02  -999
+ni63       126       6.30E+01  2.80E+01  3.50E+01  2.80E+01  5.52E+02 -9.99E+02  -999
+ni64       127       6.40E+01  2.80E+01  3.60E+01  2.80E+01  5.62E+02 -9.99E+02  -999
+o14        128       1.40E+01  8.00E+00  6.00E+00  8.00E+00  9.87E+01 -9.99E+02  -999
+o15        129       1.50E+01  8.00E+00  7.00E+00  8.00E+00  1.12E+02 -9.99E+02  -999
+o16        130       1.60E+01  8.00E+00  8.00E+00  8.00E+00  1.28E+02 -9.99E+02  -999
+o17        131       1.70E+01  8.00E+00  9.00E+00  8.00E+00  1.32E+02 -9.99E+02  -999
+o18        132       1.80E+01  8.00E+00  1.00E+01  8.00E+00  1.40E+02 -9.99E+02  -999
+p          133       1.00E+00  1.00E+00  0.00E+00  1.00E+00  0.00E+00 -9.99E+02  -999
+p29        134       2.90E+01  1.50E+01  1.40E+01  1.50E+01  2.39E+02 -9.99E+02  -999
+p30        135       3.00E+01  1.50E+01  1.50E+01  1.50E+01  2.51E+02 -9.99E+02  -999
+p31        136       3.10E+01  1.50E+01  1.60E+01  1.50E+01  2.63E+02 -9.99E+02  -999
+p32        137       3.20E+01  1.50E+01  1.70E+01  1.50E+01  2.71E+02 -9.99E+02  -999
+p33        138       3.30E+01  1.50E+01  1.80E+01  1.50E+01  2.81E+02 -9.99E+02  -999
+s32        139       3.20E+01  1.60E+01  1.60E+01  1.60E+01  2.72E+02 -9.99E+02  -999
+s33        140       3.30E+01  1.60E+01  1.70E+01  1.60E+01  2.80E+02 -9.99E+02  -999
+s34        141       3.40E+01  1.60E+01  1.80E+01  1.60E+01  2.92E+02 -9.99E+02  -999
+s35        142       3.50E+01  1.60E+01  1.90E+01  1.60E+01  2.99E+02 -9.99E+02  -999
+s36        143       3.60E+01  1.60E+01  2.00E+01  1.60E+01  3.09E+02 -9.99E+02  -999
+sc43       144       4.30E+01  2.10E+01  2.20E+01  2.10E+01  3.67E+02 -9.99E+02  -999
+sc44       145       4.40E+01  2.10E+01  2.30E+01  2.10E+01  3.77E+02 -9.99E+02  -999
+sc45       146       4.50E+01  2.10E+01  2.40E+01  2.10E+01  3.88E+02 -9.99E+02  -999
+sc46       147       4.60E+01  2.10E+01  2.50E+01  2.10E+01  3.97E+02 -9.99E+02  -999
+sc47       148       4.70E+01  2.10E+01  2.60E+01  2.10E+01  4.07E+02 -9.99E+02  -999
+sc48       149       4.80E+01  2.10E+01  2.70E+01  2.10E+01  4.15E+02 -9.99E+02  -999
+sc49       150       4.90E+01  2.10E+01  2.80E+01  2.10E+01  4.26E+02 -9.99E+02  -999
+si28       151       2.80E+01  1.40E+01  1.40E+01  1.40E+01  2.37E+02 -9.99E+02  -999
+si29       152       2.90E+01  1.40E+01  1.50E+01  1.40E+01  2.45E+02 -9.99E+02  -999
+si30       153       3.00E+01  1.40E+01  1.60E+01  1.40E+01  2.56E+02 -9.99E+02  -999
+si31       154       3.10E+01  1.40E+01  1.70E+01  1.40E+01  2.62E+02 -9.99E+02  -999
+si32       155       3.20E+01  1.40E+01  1.80E+01  1.40E+01  2.71E+02 -9.99E+02  -999
+ti44       156       4.40E+01  2.20E+01  2.20E+01  2.20E+01  3.75E+02 -9.99E+02  -999
+ti45       157       4.50E+01  2.20E+01  2.30E+01  2.20E+01  3.85E+02 -9.99E+02  -999
+ti46       158       4.60E+01  2.20E+01  2.40E+01  2.20E+01  3.98E+02 -9.99E+02  -999
+ti47       159       4.70E+01  2.20E+01  2.50E+01  2.20E+01  4.07E+02 -9.99E+02  -999
+ti48       160       4.80E+01  2.20E+01  2.60E+01  2.20E+01  4.19E+02 -9.99E+02  -999
+ti49       161       4.90E+01  2.20E+01  2.70E+01  2.20E+01  4.27E+02 -9.99E+02  -999
+ti50       162       5.00E+01  2.20E+01  2.80E+01  2.20E+01  4.38E+02 -9.99E+02  -999
+ti51       163       5.10E+01  2.20E+01  2.90E+01  2.20E+01  4.44E+02 -9.99E+02  -999
+v46        164       4.60E+01  2.30E+01  2.30E+01  2.30E+01  3.90E+02 -9.99E+02  -999
+v47        165       4.70E+01  2.30E+01  2.40E+01  2.30E+01  4.03E+02 -9.99E+02  -999
+v48        166       4.80E+01  2.30E+01  2.50E+01  2.30E+01  4.14E+02 -9.99E+02  -999
+v49        167       4.90E+01  2.30E+01  2.60E+01  2.30E+01  4.25E+02 -9.99E+02  -999
+v50        168       5.00E+01  2.30E+01  2.70E+01  2.30E+01  4.35E+02 -9.99E+02  -999
+v51        169       5.10E+01  2.30E+01  2.80E+01  2.30E+01  4.46E+02 -9.99E+02  -999
+v52        170       5.20E+01  2.30E+01  2.90E+01  2.30E+01  4.53E+02 -9.99E+02  -999
+zn59       171       5.90E+01  3.00E+01  2.90E+01  3.00E+01  5.00E+02 -9.99E+02  -999
+zn60       172       6.00E+01  3.00E+01  3.00E+01  3.00E+01  5.15E+02 -9.99E+02  -999
+zn61       173       6.10E+01  3.00E+01  3.10E+01  3.00E+01  5.25E+02 -9.99E+02  -999
+zn62       174       6.20E+01  3.00E+01  3.20E+01  3.00E+01  5.38E+02 -9.99E+02  -999
+zn63       175       6.30E+01  3.00E+01  3.30E+01  3.00E+01  5.47E+02 -9.99E+02  -999
+zn64       176       6.40E+01  3.00E+01  3.40E+01  3.00E+01  5.59E+02 -9.99E+02  -999
+zn65       177       6.50E+01  3.00E+01  3.50E+01  3.00E+01  5.67E+02 -9.99E+02  -999
+zn66       178       6.60E+01  3.00E+01  3.60E+01  3.00E+01  5.78E+02 -9.99E+02  -999
+
+Name     Index  OpacityLowTemp  Zmin    Subtype ZFreeTableFile                   EnerTableFile                    PresTableFile
+al25        19       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+al26        20       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+al27        21       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ar36        22       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ar37        23       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ar38        24       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ar39        25       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ar40        26       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+b10         27       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+b11         28       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+b8          29       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+be7         30       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+be9         31       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+c12         32       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+c13         33       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+c14         34       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ca40        35       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ca41        36       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ca42        37       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ca43        38       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ca44        39       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ca45        40       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ca46        41       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ca47        42       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ca48        43       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cl33        44       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cl34        45       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cl35        46       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cl36        47       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cl37        48       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+co53        49       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+co54        50       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+co55        51       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+co56        52       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+co57        53       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+co58        54       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+co59        55       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cr48        56       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cr49        57       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cr50        58       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cr51        59       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cr52        60       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cr53        61       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cr54        62       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cu57        63       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cu58        64       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cu59        65       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cu60        66       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cu61        67       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cu62        68       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cu63        69       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cu64        70       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+cu65        71       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+d           72       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+f17         73       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+f18         74       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+f19         75       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+fe52        76       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+fe53        77       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+fe54        78       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+fe55        79       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+fe56        80       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+fe57        81       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+fe58        82       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ga62        83       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ga63        84       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ga64        85       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ge63        86       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ge64        87       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+he3         88       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+he4         89       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+k37         90       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+k38         91       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+k39         92       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+k40         93       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+k41         94       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+li6         95       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+li7         96       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+mg23        97       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+mg24        98       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+mg25        99       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+mg26       100       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+mn50       101       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+mn51       102       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+mn52       103       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+mn53       104       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+mn54       105       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+mn55       106       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+n          107       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+n13        108       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+n14        109       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+n15        110       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+na21       111       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+na22       112       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+na23       113       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ne18       114       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ne19       115       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ne20       116       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ne21       117       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ne22       118       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ni56       119       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ni57       120       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ni58       121       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ni59       122       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ni60       123       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ni61       124       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ni62       125       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ni63       126       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ni64       127       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+o14        128       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+o15        129       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+o16        130       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+o17        131       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+o18        132       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+p          133       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+p29        134       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+p30        135       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+p31        136       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+p32        137       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+p33        138       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+s32        139       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+s33        140       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+s34        141       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+s35        142       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+s36        143       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+sc43       144       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+sc44       145       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+sc45       146       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+sc46       147       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+sc47       148       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+sc48       149       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+sc49       150       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+si28       151       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+si29       152       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+si30       153       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+si31       154       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+si32       155       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ti44       156       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ti45       157       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ti46       158       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ti47       159       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ti48       160       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ti49       161       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ti50       162       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+ti51       163       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+v46        164       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+v47        165       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+v48        166       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+v49        167       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+v50        168       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+v51        169       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+v52        170       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+zn59       171       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+zn60       172       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+zn61       173       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+zn62       174       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+zn63       175       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+zn64       176       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+zn65       177       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+zn66       178       0.00E+00 -9.99E+02    -999 -none-                           -none-                           -none-                          
+
+Species Constituents
+al25     0 constituents
+al26     0 constituents
+al27     0 constituents
+ar36     0 constituents
+ar37     0 constituents
+ar38     0 constituents
+ar39     0 constituents
+ar40     0 constituents
+b10      0 constituents
+b11      0 constituents
+b8       0 constituents
+be7      0 constituents
+be9      0 constituents
+c12      0 constituents
+c13      0 constituents
+c14      0 constituents
+ca40     0 constituents
+ca41     0 constituents
+ca42     0 constituents
+ca43     0 constituents
+ca44     0 constituents
+ca45     0 constituents
+ca46     0 constituents
+ca47     0 constituents
+ca48     0 constituents
+cl33     0 constituents
+cl34     0 constituents
+cl35     0 constituents
+cl36     0 constituents
+cl37     0 constituents
+co53     0 constituents
+co54     0 constituents
+co55     0 constituents
+co56     0 constituents
+co57     0 constituents
+co58     0 constituents
+co59     0 constituents
+cr48     0 constituents
+cr49     0 constituents
+cr50     0 constituents
+cr51     0 constituents
+cr52     0 constituents
+cr53     0 constituents
+cr54     0 constituents
+cu57     0 constituents
+cu58     0 constituents
+cu59     0 constituents
+cu60     0 constituents
+cu61     0 constituents
+cu62     0 constituents
+cu63     0 constituents
+cu64     0 constituents
+cu65     0 constituents
+d        0 constituents
+f17      0 constituents
+f18      0 constituents
+f19      0 constituents
+fe52     0 constituents
+fe53     0 constituents
+fe54     0 constituents
+fe55     0 constituents
+fe56     0 constituents
+fe57     0 constituents
+fe58     0 constituents
+ga62     0 constituents
+ga63     0 constituents
+ga64     0 constituents
+ge63     0 constituents
+ge64     0 constituents
+he3      0 constituents
+he4      0 constituents
+k37      0 constituents
+k38      0 constituents
+k39      0 constituents
+k40      0 constituents
+k41      0 constituents
+li6      0 constituents
+li7      0 constituents
+mg23     0 constituents
+mg24     0 constituents
+mg25     0 constituents
+mg26     0 constituents
+mn50     0 constituents
+mn51     0 constituents
+mn52     0 constituents
+mn53     0 constituents
+mn54     0 constituents
+mn55     0 constituents
+n        0 constituents
+n13      0 constituents
+n14      0 constituents
+n15      0 constituents
+na21     0 constituents
+na22     0 constituents
+na23     0 constituents
+ne18     0 constituents
+ne19     0 constituents
+ne20     0 constituents
+ne21     0 constituents
+ne22     0 constituents
+ni56     0 constituents
+ni57     0 constituents
+ni58     0 constituents
+ni59     0 constituents
+ni60     0 constituents
+ni61     0 constituents
+ni62     0 constituents
+ni63     0 constituents
+ni64     0 constituents
+o14      0 constituents
+o15      0 constituents
+o16      0 constituents
+o17      0 constituents
+o18      0 constituents
+p        0 constituents
+p29      0 constituents
+p30      0 constituents
+p31      0 constituents
+p32      0 constituents
+p33      0 constituents
+s32      0 constituents
+s33      0 constituents
+s34      0 constituents
+s35      0 constituents
+s36      0 constituents
+sc43     0 constituents
+sc44     0 constituents
+sc45     0 constituents
+sc46     0 constituents
+sc47     0 constituents
+sc48     0 constituents
+sc49     0 constituents
+si28     0 constituents
+si29     0 constituents
+si30     0 constituents
+si31     0 constituents
+si32     0 constituents
+ti44     0 constituents
+ti45     0 constituents
+ti46     0 constituents
+ti47     0 constituents
+ti48     0 constituents
+ti49     0 constituents
+ti50     0 constituents
+ti51     0 constituents
+v46      0 constituents
+v47      0 constituents
+v48      0 constituents
+v49      0 constituents
+v50      0 constituents
+v51      0 constituents
+v52      0 constituents
+zn59     0 constituents
+zn60     0 constituents
+zn61     0 constituents
+zn62     0 constituents
+zn63     0 constituents
+zn64     0 constituents
+zn65     0 constituents
+zn66     0 constituents
+                                                                               
+ ==============================================================================
+ [ 10-15-2018  01:04:01.974 ] [gr_initGeometry] checking BCs for idir: 1
+ [ 10-15-2018  01:04:01.975 ] [gr_initGeometry] checking BCs for idir: 2
+ [ 10-15-2018  01:04:01.975 ] [gr_initGeometry] checking BCs for idir: 3
+ [Simulation_init] Reading initial 1-d WD profile
+ [ 10-15-2018  01:04:08.032 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-15-2018  01:04:08.033 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 512
+ [GRID amr_refine_derefine] min blks 1    max blks 2    tot blks 512
+ [GRID amr_refine_derefine] min leaf blks 1    max leaf blks 2    tot leaf blks 512
+ [ 10-15-2018  01:04:08.041 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-15-2018  01:04:08.149 ] [GRID gr_expandDomain]: iteration=1, create level=2
+ INFO: Grid_fillGuardCells is ignoring masking.
+ [ 10-15-2018  01:04:08.387 ] [mpi_amr_comm_setup]: buffer_dim_send=1106345, buffer_dim_recv=1106345
+ [ 10-15-2018  01:04:08.684 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-15-2018  01:04:08.689 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 576
+ [GRID amr_refine_derefine] min blks 1    max blks 2    tot blks 576
+ [GRID amr_refine_derefine] min leaf blks 0    max leaf blks 2    tot leaf blks 568
+ [ 10-15-2018  01:04:08.803 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-15-2018  01:04:08.825 ] [GRID gr_expandDomain]: iteration=2, create level=3
+ [ 10-15-2018  01:04:10.094 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-15-2018  01:04:10.101 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 1024
+ [GRID amr_refine_derefine] min blks 2    max blks 4    tot blks 1024
+ [GRID amr_refine_derefine] min leaf blks 1    max leaf blks 3    tot leaf blks 960
+ [ 10-15-2018  01:04:10.229 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-15-2018  01:04:10.244 ] [GRID gr_expandDomain]: iteration=3, create level=4
+ [ 10-15-2018  01:04:11.160 ] [mpi_amr_comm_setup]: buffer_dim_send=3202209, buffer_dim_recv=1106345
+ [ 10-15-2018  01:04:12.402 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-15-2018  01:04:12.410 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 2048
+ [GRID amr_refine_derefine] min blks 4    max blks 6    tot blks 2048
+ [GRID amr_refine_derefine] min leaf blks 3    max leaf blks 5    tot leaf blks 1856
+ [ 10-15-2018  01:04:12.604 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-15-2018  01:04:12.612 ] [GRID gr_expandDomain]: iteration=4, create level=5
+ [ 10-15-2018  01:04:13.605 ] [mpi_amr_comm_setup]: buffer_dim_send=3647289, buffer_dim_recv=3442629
+ [ 10-15-2018  01:04:15.401 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-15-2018  01:04:15.410 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 4864
+ [GRID amr_refine_derefine] min blks 11    max blks 13    tot blks 4864
+ [GRID amr_refine_derefine] min leaf blks 9    max leaf blks 12    tot leaf blks 4320
+ [ 10-15-2018  01:04:15.697 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-15-2018  01:04:15.703 ] [GRID gr_expandDomain]: iteration=5, create level=6
+ [ 10-15-2018  01:04:18.103 ] [mpi_amr_comm_setup]: buffer_dim_send=6473561, buffer_dim_recv=5460201
+ [ 10-15-2018  01:04:21.423 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-15-2018  01:04:21.438 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 14080
+ [GRID amr_refine_derefine] min blks 33    max blks 37    tot blks 14080
+ [GRID amr_refine_derefine] min leaf blks 29    max leaf blks 33    tot leaf blks 12384
+ [ 10-15-2018  01:04:22.021 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-15-2018  01:04:22.028 ] [GRID gr_expandDomain]: iteration=6, create level=6
+ [ 10-15-2018  01:04:27.710 ] [mpi_amr_comm_setup]: buffer_dim_send=7696333, buffer_dim_recv=8048825
+ [ 10-15-2018  01:04:35.457 ] [GRID gr_expandDomain]: iteration=7, create level=6
+ [ 10-15-2018  01:04:48.970 ] [GRID gr_expandDomain]: iteration=8, create level=6
+ [ 10-15-2018  01:04:52.664 ] memory: /proc vsize    (MB):     7023.86 (min)       7776.03 (max)       7382.31 (avg)
+ [ 10-15-2018  01:04:52.665 ] memory: /proc rss      (MB):     2171.61 (min)       2255.30 (max)       2213.79 (avg)
+ [ 10-15-2018  01:04:52.667 ] memory: /proc vsize    (MB):     7023.86 (min)       7776.03 (max)       7382.31 (avg)
+ [ 10-15-2018  01:04:52.668 ] memory: /proc rss      (MB):     2171.67 (min)       2255.36 (max)       2213.86 (avg)
+ [ 10-15-2018  01:04:53.160 ] memory: /proc vsize    (MB):     7035.53 (min)       7788.03 (max)       7394.46 (avg)
+ [ 10-15-2018  01:04:53.161 ] memory: /proc rss      (MB):     2171.83 (min)       2255.40 (max)       2214.35 (avg)
+ [ 10-15-2018  01:05:06.016 ] [IO_writeCheckpoint] open: type=checkpoint name=snd_hdf5_chk_0000
+ [ 10-15-2018  01:10:39.902 ] [IO_writeCheckpoint] close: type=checkpoint name=snd_hdf5_chk_0000
+ [ 10-15-2018  01:10:39.937 ] [IO_writePlotfile] open: type=plotfile name=snd_hdf5_plt_cnt_0000
+ [ 10-15-2018  01:11:17.607 ] [IO_writePlotfile] close: type=plotfile name=snd_hdf5_plt_cnt_0000
+ [ 10-15-2018  01:11:17.608 ] memory: /proc vsize    (MB):     7041.53 (min)       8208.68 (max)       7529.88 (avg)
+ [ 10-15-2018  01:11:17.609 ] memory: /proc rss      (MB):     2171.96 (min)       2255.95 (max)       2216.95 (avg)
+ [ 10-15-2018  01:11:17.610 ] [Driver_evolveFlash]: Entering evolution loop
+ [ 10-15-2018  01:11:17.611 ] step: n=1 t=0.000000E+00 dt=1.000000E-06
+ [ 10-15-2018  01:12:31.119 ] step: n=2 t=1.000000E-06 dt=1.200000E-06
+ [ 10-15-2018  01:13:51.906 ] step: n=3 t=2.200000E-06 dt=1.440000E-06
+ [ 10-15-2018  01:14:53.409 ] step: n=4 t=3.640000E-06 dt=1.728000E-06
+ [ 10-15-2018  01:16:13.210 ] step: n=5 t=5.368000E-06 dt=2.073600E-06
+ [ 10-15-2018  01:17:13.778 ] step: n=6 t=7.441600E-06 dt=2.488320E-06
+ [ 10-15-2018  01:18:33.491 ] step: n=7 t=9.929920E-06 dt=2.985984E-06
+ [ 10-15-2018  01:19:33.190 ] step: n=8 t=1.291590E-05 dt=3.583181E-06
+ [ 10-15-2018  01:20:52.717 ] step: n=9 t=1.649908E-05 dt=4.299817E-06
+ [ 10-15-2018  01:21:52.683 ] step: n=10 t=2.079890E-05 dt=5.159780E-06
+ [ 10-15-2018  01:23:11.764 ] step: n=11 t=2.595868E-05 dt=6.191736E-06
+ [ 10-15-2018  01:24:11.676 ] step: n=12 t=3.215042E-05 dt=7.430084E-06
+ [ 10-15-2018  01:25:30.198 ] step: n=13 t=3.958050E-05 dt=8.916100E-06
+ [ 10-15-2018  01:26:29.819 ] step: n=14 t=4.849660E-05 dt=1.069932E-05
+ [ 10-15-2018  01:27:47.485 ] step: n=15 t=5.919592E-05 dt=1.283918E-05
+ [ 10-15-2018  01:28:46.959 ] step: n=16 t=7.203511E-05 dt=1.540702E-05
+ [ 10-15-2018  01:30:06.253 ] step: n=17 t=8.744213E-05 dt=1.848843E-05
+ [ 10-15-2018  01:31:06.166 ] step: n=18 t=1.059306E-04 dt=2.218611E-05
+ [ 10-15-2018  01:32:24.024 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-15-2018  01:32:24.034 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 14272
+ [GRID amr_refine_derefine] min blks 16    max blks 38    tot blks 14272
+ [GRID amr_refine_derefine] min leaf blks 13    max leaf blks 34    tot leaf blks 12552
+ [ 10-15-2018  01:32:24.872 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-15-2018  01:32:27.331 ] step: n=19 t=1.281167E-04 dt=2.662333E-05
+ [ 10-15-2018  01:32:29.590 ] [mpi_amr_comm_setup]: buffer_dim_send=8060745, buffer_dim_recv=8641341
+ [ 10-15-2018  01:33:27.878 ] step: n=20 t=1.547400E-04 dt=3.194800E-05
+ [ 10-15-2018  01:34:47.825 ] step: n=21 t=1.866880E-04 dt=3.833760E-05
+ [ 10-15-2018  01:35:48.331 ] step: n=22 t=2.250256E-04 dt=4.600512E-05
+ [ 10-15-2018  01:37:08.420 ] step: n=23 t=2.710307E-04 dt=5.520614E-05
+ [ 10-15-2018  01:38:09.775 ] step: n=24 t=3.262369E-04 dt=6.624737E-05
+ [ 10-15-2018  01:39:29.646 ] step: n=25 t=3.924842E-04 dt=7.949685E-05
+ [ 10-15-2018  01:40:30.945 ] step: n=26 t=4.719811E-04 dt=9.539622E-05
+ [ 10-15-2018  01:41:51.339 ] step: n=27 t=5.673773E-04 dt=1.144755E-04
+ [ 10-15-2018  01:42:53.511 ] step: n=28 t=6.818528E-04 dt=1.373706E-04
+ [ 10-15-2018  01:44:14.282 ] step: n=29 t=8.192233E-04 dt=1.648447E-04
+ [ 10-15-2018  01:45:15.967 ] step: n=30 t=9.840680E-04 dt=1.978136E-04
+ [ 10-15-2018  01:46:37.369 ] step: n=31 t=1.181882E-03 dt=2.373763E-04
+ [ 10-15-2018  01:47:40.318 ] step: n=32 t=1.419258E-03 dt=7.382463E-05
+ [ 10-15-2018  01:49:00.852 ] step: n=33 t=1.493083E-03 dt=8.858956E-05
+ [ 10-15-2018  01:50:02.844 ] step: n=34 t=1.581672E-03 dt=1.063075E-04
+ [ 10-15-2018  01:51:23.764 ] step: n=35 t=1.687980E-03 dt=1.275690E-04
+ [ 10-15-2018  01:52:25.907 ] step: n=36 t=1.815549E-03 dt=1.530828E-04
+ [ 10-15-2018  01:53:46.715 ] step: n=37 t=1.968631E-03 dt=1.836993E-04
+ [ 10-15-2018  01:54:49.481 ] step: n=38 t=2.152331E-03 dt=2.204392E-04
+ [ 10-15-2018  01:56:11.038 ] step: n=39 t=2.372770E-03 dt=2.645270E-04
+ [ 10-15-2018  01:57:13.681 ] step: n=40 t=2.637297E-03 dt=3.174324E-04
+ [ 10-15-2018  01:58:36.309 ] [Driver_evolveFlash]: Exiting evolution loop
+ [ 10-15-2018  01:58:48.474 ] [IO_writeCheckpoint] open: type=checkpoint name=snd_hdf5_chk_0001
+ [ 10-15-2018  02:04:48.907 ] [IO_writeCheckpoint] close: type=checkpoint name=snd_hdf5_chk_0001
+ [ 10-15-2018  02:04:48.953 ] [IO_writePlotfile] open: type=plotfile name=snd_forced_hdf5_plt_cnt_0000
+ [ 10-15-2018  02:05:40.651 ] [IO_writePlotfile] close: type=plotfile name=snd_forced_hdf5_plt_cnt_0000
+ [ 10-15-2018  02:05:40.652 ] memory: /proc vsize    (MB):     9294.63 (min)      42667.32 (max)      27256.17 (avg)
+ [ 10-15-2018  02:05:40.653 ] memory: /proc rss      (MB):     2569.07 (min)       2669.05 (max)       2633.27 (avg)
+ ==============================================================================
+ perf_summary: code performance summary for process             0
+                      beginning : 10-15-2018  01:03:59
+                         ending : 10-15-2018  02:05:40
+   seconds in monitoring period :             3701.073
+      number of evolution steps :                   40
+ ------------------------------------------------------------------------------
+ accounting unit                       time sec  num calls   secs avg  time pct
+ ------------------------------------------------------------------------------
+ initialization                        438.030      1         438.030    11.835
+  eos                                    6.156      8           0.770     0.166
+  guardcell Barrier                      0.249      7           0.036     0.007
+  guardcell internal                    17.731      7           2.533     0.479
+   amr_guardcell                        17.440      7           2.491     0.471
+   eos gc                                0.270      7           0.039     0.007
+  gravity Barrier                        0.000      1           0.000     0.000
+  gravity                                0.327      1           0.327     0.009
+   Multipole Solver                      0.309      1           0.309     0.008
+    Moment All Reduce                    0.000      2           0.000     0.000
+    gr_mpoleMoments                      0.042      1           0.042     0.001
+    gr_mpoleCollectMoments               0.127      1           0.127     0.003
+     Moment All Reduce                   0.126      2           0.063     0.003
+    gr_mpolePotentials                   0.135      1           0.135     0.004
+  writeCheckpoint                      346.644      1         346.644     9.366
+   restrictAll                          11.925      1          11.925     0.322
+  writePlotfile                         37.701      1          37.701     1.019
+ writeCheckpoint                       372.595      1         372.595    10.067
+  restrictAll                           11.249      1          11.249     0.304
+ writePlotfile                          51.741      1          51.741     1.398
+ evolution                            2838.697      1        2838.697    76.699
+  cosmology                              0.000     80           0.000     0.000
+  Hydro                               1913.013     40          47.825    51.688
+   hydro_unsplit                      1913.013     40          47.825    51.688
+    Head                               642.458     40          16.061    17.359
+     guardcell Barrier                 126.317     80           1.579     3.413
+     guardcell internal                514.917     80           6.436    13.913
+      amr_guardcell                    508.362     80           6.355    13.736
+      eos gc                             5.822     40           0.146     0.157
+    tail                               360.693     40           9.017     9.746
+     guardcell Barrier                   0.314     40           0.008     0.008
+     guardcell internal                253.979     40           6.349     6.862
+      amr_guardcell                    253.609     40           6.340     6.852
+     gravity Barrier                    17.629     40           0.441     0.476
+     gravity                            11.430     40           0.286     0.309
+      Multipole Solver                  10.674     40           0.267     0.288
+       Moment All Reduce                 0.106     80           0.001     0.003
+       gr_mpoleMoments                   1.636     40           0.041     0.044
+       gr_mpoleCollectMoment             3.183     40           0.080     0.086
+        Moment All Reduce                3.142     80           0.039     0.085
+       gr_mpolePotentials                5.509     40           0.138     0.149
+  sourceTerms                          372.236     40           9.306    10.058
+   burn                                370.112     40           9.253    10.000
+    burn_top                           356.800     40           8.920     9.640
+     guardcell Barrier                 115.973     40           2.899     3.133
+     guardcell internal                232.007     40           5.800     6.269
+      amr_guardcell                    231.708     40           5.793     6.261
+    burn_middle                          8.452     40           0.211     0.228
+    burn_bottom                          4.860     40           0.121     0.131
+  Particles_advance                      0.000     40           0.000     0.000
+  diagnostics                            0.000     40           0.000     0.000
+  IO_output                            170.340     80           2.129     4.602
+   diagnostics                         170.258     80           2.128     4.600
+  Grid_updateRefinement                382.678     40           9.567    10.340
+   eos                                   1.765      1           1.765     0.048
+   tree                                380.912     40           9.523    10.292
+    markRefineDerefine                 131.487     20           6.574     3.553
+     guardcell Barrier                   0.003     20           0.000     0.000
+     guardcell internal                130.087     20           6.504     3.515
+      amr_guardcell                    126.995     20           6.350     3.431
+      eos gc                             2.910     20           0.145     0.079
+    amr_refine_derefine                 92.735     20           4.637     2.506
+    updateData                           0.000     20           0.000     0.000
+   updateParticleRefinement              0.000     20           0.000     0.000
+  Driver_computeDt                       0.383     40           0.010     0.010
+ ==============================================================================
+ ==============================================================================
+ perf_summary: code performance summary statistics
+                      beginning : 10-15-2018  01:03:59
+                         ending : 10-15-2018  02:05:40
+   seconds in monitoring period :             3701.073
+      number of evolution steps :                   40
+ ------------------------------------------------------------------------------
+ accounting unit                  max/proc (s)  min/proc (s) avg/proc (s)   num calls
+ ------------------------------------------------------------------------------
+ initialization                        438.030       438.026      438.028           1
+  eos                                    6.156         5.322        5.763           8
+  guardcell Barrier                      1.727         0.249        0.966           7
+  guardcell internal                    26.815        16.954       24.129           7
+   amr_guardcell                        23.094        16.663       21.051           7
+   eos gc                                4.103         0.270        3.018           7
+  gravity Barrier                        0.000         0.000        0.000           1
+  gravity                                0.440         0.306        0.324           1
+   Multipole Solver                      0.424         0.289        0.307           1
+    Moment All Reduce                    0.003         0.000        0.002           2
+    gr_mpoleMoments                      0.057         0.031        0.034           1
+    gr_mpoleCollectMoments               0.138         0.111        0.134           1
+     Moment All Reduce                   0.137         0.110        0.133           2
+    gr_mpolePotentials                   0.248         0.113        0.132           1
+  writeCheckpoint                      346.644       346.628      346.639           1
+   restrictAll                          11.934        11.914       11.925           1
+  writePlotfile                         37.701        37.697       37.697           1
+ writeCheckpoint                       372.595       372.592      372.593           1
+  restrictAll                           11.257        11.249       11.249           1
+ writePlotfile                          51.741        51.737       51.737           1
+ evolution                            2838.701      2838.697     2838.700           1
+  cosmology                              0.000         0.000        0.000          80
+  Hydro                               2017.872      1883.973     1978.067          40
+   hydro_unsplit                      2017.872      1883.973     1978.067          40
+    Head                               822.310       640.583      761.908          40
+     guardcell Barrier                 128.225        10.842       51.718          80
+     guardcell internal                809.046       511.141      709.105          80
+      amr_guardcell                    738.207       504.641      656.484          80
+      eos gc                            71.737         5.806       50.443          40
+    tail                               462.811       351.737      422.139          40
+     guardcell Barrier                   2.350         0.182        0.608          40
+     guardcell internal                369.568       251.433      328.104          40
+      amr_guardcell                    368.488       251.112      327.073          40
+     gravity Barrier                    53.642         5.057       14.069          40
+     gravity                            11.565         9.401       11.141          40
+      Multipole Solver                  10.846         8.935       10.440          40
+       Moment All Reduce                 0.453         0.063        0.149          80
+       gr_mpoleMoments                   2.490         0.934        1.460          40
+       gr_mpoleCollectMoment             3.879         2.324        3.358          40
+        Moment All Reduce                3.830         2.284        3.313          80
+       gr_mpolePotentials                5.629         3.483        5.218          40
+  sourceTerms                          508.694       366.367      377.003          40
+   burn                                507.367       364.113      374.779          40
+    burn_top                           381.616       351.103      359.378          40
+     guardcell Barrier                 145.061        11.162       50.967          40
+     guardcell internal                340.501       230.436      299.695          40
+      amr_guardcell                    339.752       229.789      298.695          40
+    burn_middle                        120.866         7.803       10.709          40
+    burn_bottom                          5.479         4.039        4.691          40
+  Particles_advance                      0.000         0.000        0.000          40
+  diagnostics                            0.000         0.000        0.000          40
+  IO_output                            172.183        41.730      100.570          80
+   diagnostics                         172.099        41.646      100.485          80
+  Grid_updateRefinement                382.684       381.575      382.525          40
+   eos                                   1.771         0.662        1.612           1
+   tree                                380.916       380.912      380.912          40
+    markRefineDerefine                 218.722       130.777      204.987          20
+     guardcell Barrier                   0.003         0.001        0.003          20
+     guardcell internal                216.763       129.370      189.133          20
+      amr_guardcell                    184.377       124.325      163.940          20
+      eos gc                            34.127         2.900       24.656          20
+    amr_refine_derefine                 93.445         5.500       19.235          20
+    updateData                           0.001         0.000        0.000          20
+   updateParticleRefinement              0.000         0.000        0.000          20
+  Driver_computeDt                       1.483         0.375        0.533          40
+ ==============================================================================
+ [ 10-15-2018  02:05:40.712 ] LOGFILE_END: FLASH run complete.

@@ -1,0 +1,860 @@
+ Number of MPI tasks:                 800
+ MPI version:                           3
+ MPI subversion:                        1
+ Dimensionality:                        3
+ Max Number of Blocks/Proc:           200
+ Number x zones:                        8
+ Number y zones:                        8
+ Number z zones:                        8
+ Setup stamp:     Thu Oct 4 12:05:22 2018
+ Build stamp:     Tue Oct 9 14:47:08 2018
+ System info:     
+ Linux titan-ext1 3.0.101-0.47.106.29-default #1 SMP Mon May 21 13:04:36 UTC 2018
+ Version:         
+ FLASH 4.4                                                                       
+ Build directory: 
+ /lustre/atlas/scratch/saurabh/ast136/flash-branches/FLASHOR/sedov3d
+ Setup syntax:    
+ /lustre/atlas/scratch/saurabh/ast136/flash-branches/FLASHOR/bin/setup.py Sedov -auto -3d -site=titan.ccs.ornl.gov -objdir=sedov3d
+ f compiler flags: 
+ ftn -I/opt/cray/hdf5/1.10.0.3/PGI/15.3/include -DH5_USE_16_API -c -g -gopt -fastsse -r8 -i4 -Mpreprocess -DMAXBLOCKS=200 -DNXB=8 -DNYB=8 -DNZB=8 -DN_DIM=3
+ c compiler flags:    
+ cc -I/opt/cray/hdf5/1.10.0.3/PGI/15.3/include -DH5_USE_16_API -c -g -gopt -fastsse -DMAXBLOCKS=200 -DNXB=8 -DNYB=8 -DNZB=8 -DN_DIM=3
+ ==============================================================================
+ Comment:  Sedov explosion
+ ==============================================================================
+ FLASH Units used:
+   Driver/DriverMain/Unsplit
+   Grid/GridBoundaryConditions
+   Grid/GridMain/paramesh/interpolation/Paramesh4/prolong
+   Grid/GridMain/paramesh/interpolation/prolong
+   Grid/GridMain/paramesh/paramesh4/Paramesh4dev/PM4_package/headers
+   Grid/GridMain/paramesh/paramesh4/Paramesh4dev/PM4_package/mpi_source
+   Grid/GridMain/paramesh/paramesh4/Paramesh4dev/PM4_package/source
+   
+ Grid/GridMain/paramesh/paramesh4/Paramesh4dev/PM4_package/utilities/multigrid
+   Grid/GridMain/paramesh/paramesh4/Paramesh4dev/flash_avoid_orrery
+   Grid/localAPI
+   IO/IOMain/hdf5/serial/PM
+   IO/localAPI
+   PhysicalConstants/PhysicalConstantsMain
+   RuntimeParameters/RuntimeParametersMain
+   Simulation/SimulationMain/Sedov
+   flashUtilities/contiguousConversion
+   flashUtilities/general
+   flashUtilities/interpolation/oneDim
+   flashUtilities/nameValueLL
+   flashUtilities/sorting/quicksort
+   flashUtilities/system/memoryUsage/legacy
+   monitors/Logfile/LogfileMain
+   monitors/Timers/TimersMain/MPINative
+   physics/Eos/EosMain/Gamma
+   physics/Eos/localAPI
+   physics/Hydro/HydroMain/unsplit/Hydro_Unsplit
+   physics/Hydro/localAPI
+ ==============================================================================
+ RuntimeParameters:
+                                                                               
+ ==============================================================================
+bndpriorityone              =          1
+bndprioritythree            =          3
+bndprioritytwo              =          2
+checkpointfileintervalstep  =          0
+checkpointfilenumber        =          0
+dr_abortpause               =          2
+dr_dtminbelowaction         =          1
+drift_break_inst            =          0
+drift_trunc_mantissa        =          2
+drift_verbose_inst          =          0
+eos_entrelescalechoice      =          6
+eos_loglevel                =        700
+fileformatversion           =          9
+forcedplotfilenumber        =          0
+gr_lrefmaxtimevalue_1       =         -1
+gr_lrefmaxtimevalue_10      =         -1
+gr_lrefmaxtimevalue_11      =         -1
+gr_lrefmaxtimevalue_12      =         -1
+gr_lrefmaxtimevalue_13      =         -1
+gr_lrefmaxtimevalue_14      =         -1
+gr_lrefmaxtimevalue_15      =         -1
+gr_lrefmaxtimevalue_16      =         -1
+gr_lrefmaxtimevalue_17      =         -1
+gr_lrefmaxtimevalue_18      =         -1
+gr_lrefmaxtimevalue_19      =         -1
+gr_lrefmaxtimevalue_2       =         -1
+gr_lrefmaxtimevalue_20      =         -1
+gr_lrefmaxtimevalue_3       =         -1
+gr_lrefmaxtimevalue_4       =         -1
+gr_lrefmaxtimevalue_5       =         -1
+gr_lrefmaxtimevalue_6       =         -1
+gr_lrefmaxtimevalue_7       =         -1
+gr_lrefmaxtimevalue_8       =         -1
+gr_lrefmaxtimevalue_9       =         -1
+gr_pmrpdivergencefree       =          1
+gr_pmrpifaceoff             =          0
+gr_pmrpl2p5d                =          0
+gr_pmrpmaxblocks            =         -1
+gr_pmrpmflags               =          1
+gr_pmrpnboundaries          =          6
+gr_pmrpndim                 =          3
+gr_pmrpnedgevar1            =         -1
+gr_pmrpnfacevar             =         -1
+gr_pmrpnfielddivf           =         -1
+gr_pmrpnfluxvar             =         -1
+gr_pmrpnguard               =         -1
+gr_pmrpnguardwork           =         -1
+gr_pmrpnvar                 =         -1
+gr_pmrpnvarwork             =          1
+gr_pmrpnvarcorn             =          0
+gr_pmrpnvaredge             =          0
+gr_pmrpnxb                  =         -1
+gr_pmrpnyb                  =         -1
+gr_pmrpnzb                  =         -1
+gr_restrictallmethod        =          3
+gr_sanitizedatamode         =          1
+gr_sanitizeverbosity        =          5
+hy_3torder                  =         -1
+hydrocomputedtoption        =         -1
+iprocs                      =          1
+interpol_order              =          2
+irenorm                     =          0
+jprocs                      =          1
+kprocs                      =          1
+lrefine_del                 =          0
+lrefine_max                 =          7 [CHANGED]
+lrefine_min                 =          1
+lrefine_min_init            =          1
+max_particles_per_blk       =        100
+memory_stat_freq            =     100000
+meshcopycount               =          1
+min_particles_per_blk       =          1
+nbegin                      =          1
+nblockx                     =          8 [CHANGED]
+nblocky                     =          8 [CHANGED]
+nblockz                     =          8 [CHANGED]
+nend                        =        100
+nrefs                       =          2
+nsteptotalsts               =          5
+order                       =          3 [CHANGED]
+outputsplitnum              =          1
+plotfileintervalstep        =          0
+plotfilenumber              =          0
+refine_var_count            =          4
+rolling_checkpoint          =      10000
+sim_nsubzones               =          7
+sweeporder                  =        123
+transorder                  =          1
+wr_integrals_freq           =          1
+limitedslopebeta            =                 0.100E+01
+cfl                         =                 0.800E+00
+checkpointfileintervaltime  =                 0.100E-01 [CHANGED]
+checkpointfileintervalz     =                 0.180+309
+cvisc                       =                 0.100E+00
+derefine_cutoff_1           =                 0.200E+00
+derefine_cutoff_2           =                 0.200E+00
+derefine_cutoff_3           =                 0.200E+00
+derefine_cutoff_4           =                 0.200E+00
+dr_dtmincontinue            =                 0.000E+00
+dr_tstepslowstartfactor     =                 0.100E+00
+dtinit                      =                 0.100E-09
+dtmax                       =                 0.100E+06
+dtmin                       =                 0.100E-09
+eintswitch                  =                 0.100E-03 [CHANGED]
+eos_singlespeciesa          =                 0.100E+01
+eos_singlespeciesz          =                 0.100E+01
+gamma                       =                 0.140E+01 [CHANGED]
+gr_lrefinemaxredlogbase     =                 0.100E+02
+gr_lrefinemaxredradiusfact  =                 0.000E+00
+gr_lrefinemaxredtref        =                 0.000E+00
+gr_lrefinemaxredtimescale   =                 0.100E+01
+gr_lrefmaxtime_1            =                -0.100E+01
+gr_lrefmaxtime_10           =                -0.100E+01
+gr_lrefmaxtime_11           =                -0.100E+01
+gr_lrefmaxtime_12           =                -0.100E+01
+gr_lrefmaxtime_13           =                -0.100E+01
+gr_lrefmaxtime_14           =                -0.100E+01
+gr_lrefmaxtime_15           =                -0.100E+01
+gr_lrefmaxtime_16           =                -0.100E+01
+gr_lrefmaxtime_17           =                -0.100E+01
+gr_lrefmaxtime_18           =                -0.100E+01
+gr_lrefmaxtime_19           =                -0.100E+01
+gr_lrefmaxtime_2            =                -0.100E+01
+gr_lrefmaxtime_20           =                -0.100E+01
+gr_lrefmaxtime_3            =                -0.100E+01
+gr_lrefmaxtime_4            =                -0.100E+01
+gr_lrefmaxtime_5            =                -0.100E+01
+gr_lrefmaxtime_6            =                -0.100E+01
+gr_lrefmaxtime_7            =                -0.100E+01
+gr_lrefmaxtime_8            =                -0.100E+01
+gr_lrefmaxtime_9            =                -0.100E+01
+hy_cflfallbackfactor        =                 0.900E+00
+hy_fpresinmomflux           =                 0.100E+01
+hybridorderkappa            =                 0.000E+00
+nusts                       =                 0.200E+00 [CHANGED]
+plotfileintervaltime        =                 0.000E+00 [CHANGED]
+plotfileintervalz           =                 0.180+309
+radiusgp                    =                 0.200E+01
+refine_cutoff_1             =                 0.800E+00
+refine_cutoff_2             =                 0.800E+00
+refine_cutoff_3             =                 0.800E+00
+refine_cutoff_4             =                 0.800E+00
+refine_filter_1             =                 0.100E-01
+refine_filter_2             =                 0.100E-01
+refine_filter_3             =                 0.100E-01
+refine_filter_4             =                 0.100E-01
+rss_limit                   =                -0.100E+01
+sigmagp                     =                 0.300E+01
+sim_expenergy               =                 0.100E+01
+sim_pambient                =                 0.100E-04
+sim_rinit                   =                 0.137E-01 [CHANGED]
+sim_rhoambient              =                 0.100E+01
+sim_xctr                    =                 0.500E+00
+sim_yctr                    =                 0.500E+00
+sim_zctr                    =                 0.500E+00
+small                       =                 0.100E-09
+smalle                      =                 0.100E-09
+smallp                      =                 0.100E-09
+smallt                      =                 0.100E-09
+smallu                      =                 0.100E-09
+smallx                      =                 0.100E-09
+smlrho                      =                 0.100E-09
+tinitial                    =                 0.000E+00
+tiny                        =                 0.100E-15
+tmax                        =                 0.500E-01 [CHANGED]
+tstep_change_factor         =                 0.200E+01
+wall_clock_checkpoint       =                 0.432E+05
+wall_clock_time_limit       =                 0.605E+06
+x_refine_center             =                 0.000E+00
+xmax                        =                 0.100E+01
+xmin                        =                 0.000E+00
+y_refine_center             =                 0.000E+00
+ymax                        =                 0.100E+01
+ymin                        =                 0.000E+00
+zfinal                      =                 0.000E+00
+zinitial                    =                -0.100E+01
+z_refine_center             =                 0.000E+00
+zmax                        =                 0.100E+01
+zmin                        =                 0.000E+00
+riemannsolver               = Roe                            [CHANGED]
+unitsystem                  = none                          
+basenm                      = sedov_                         [CHANGED]
+entropyfixmethod            = HARTENHYMAN                   
+eosmode                     = dens_ie                       
+eosmodeinit                 = dens_ie                       
+geometry                    = cartesian                     
+gr_pmrpoutputdir            = ./                            
+gravlocation                = hydro                         
+grav_boundary_type          = isolated                      
+hy_eosmodegc                = see eosMode                   
+log_file                    = sedov.log                      [CHANGED]
+output_directory            =                               
+pc_unitsbase                = CGS                           
+plot_grid_var_1             = none                          
+plot_grid_var_10            = none                          
+plot_grid_var_11            = none                          
+plot_grid_var_12            = none                          
+plot_grid_var_2             = none                          
+plot_grid_var_3             = none                          
+plot_grid_var_4             = none                          
+plot_grid_var_5             = none                          
+plot_grid_var_6             = none                          
+plot_grid_var_7             = none                          
+plot_grid_var_8             = none                          
+plot_grid_var_9             = none                          
+plot_var_1                  = dens                           [CHANGED]
+plot_var_10                 = none                          
+plot_var_11                 = none                          
+plot_var_12                 = none                          
+plot_var_2                  = pres                           [CHANGED]
+plot_var_3                  = temp                           [CHANGED]
+plot_var_4                  = none                          
+plot_var_5                  = none                          
+plot_var_6                  = none                          
+plot_var_7                  = none                          
+plot_var_8                  = none                          
+plot_var_9                  = none                          
+prof_file                   = profile.dat                   
+refine_var_1                = dens                           [CHANGED]
+refine_var_2                = pres                           [CHANGED]
+refine_var_3                = none                          
+refine_var_4                = none                          
+run_comment                 = Sedov explosion                [CHANGED]
+run_number                  = 1                             
+slopelimiter                = mc                             [CHANGED]
+stats_file                  = flash.dat                     
+wenomethod                  = WENO5                         
+xl_boundary_type            = outflow                        [CHANGED]
+xr_boundary_type            = outflow                        [CHANGED]
+yl_boundary_type            = outflow                        [CHANGED]
+yr_boundary_type            = outflow                        [CHANGED]
+zl_boundary_type            = outflow                        [CHANGED]
+zr_boundary_type            = outflow                        [CHANGED]
+eosforriemann               =  F
+addthermalflux              =  T
+allowdtstsdominate          =  F
+alwayscomputeuservars       =  T
+alwaysrestrictcheckpoint    =  T
+burningrav                  =  F
+charlimiting                =  T
+chkguardcellsinput          =  F
+chkguardcellsoutput         =  F
+conserveangmom              =  F
+converttoconsvdformeshcalls =  F
+converttoconsvdinmeshinterp =  T
+corners                     =  F
+dr_printtsteploc            =  T
+dr_shortenlaststepbeforetmax =  F
+drift_tuples                =  F
+eachprocwritesownabortlog   =  F
+eachprocwritessummary       =  F
+earlyblockdistadjustment    =  T
+enablemaskedgcfill          =  F
+entropy                     =  F
+flux_correct                =  T
+geometryoverride            =  F
+gr_bcenableapplymixedgds    =  T
+gr_lrefinemaxbytime         =  F
+gr_lrefinemaxreddobylogr    =  F
+gr_lrefinemaxreddobytime    =  F
+gr_pmrpadvancealllevels     =  F
+gr_pmrpamrerrorchecking     =  F
+gr_pmrpcartesianpm          =  F
+gr_pmrpconserve             =  F
+gr_pmrpconsvfluxdensities   =  T
+gr_pmrpconsvfluxes          =  F
+gr_pmrpcurvilinear          =  F
+gr_pmrpcurvilinearconserve  =  F
+gr_pmrpcylindricalpm        =  F
+gr_pmrpdiagonals            =  T
+gr_pmrpedgevalue            =  T
+gr_pmrpedgevalueinteg       =  F
+gr_pmrpemptycells           =  F
+gr_pmrpforceconsistency     =  T
+gr_pmrplsingularline        =  F
+gr_pmrpnopermanentguardcells =  F
+gr_pmrppolarpm              =  F
+gr_pmrppredcorr             =  F
+gr_pmrpsphericalpm          =  F
+gr_pmrptimingmpi            =  F
+gr_pmrptimingmpix           =  F
+gr_pmrpvardt                =  F
+gravburnbarrier             =  F
+hy_fallbacklowercfl         =  F
+hy_fullspecmsfluxhandling   =  T
+ignoreforcedplot            =  F
+io_writemscalarintegrals    =  F
+plotfilegridquantitydp      =  F
+plotfilemetadatadp          =  F
+reducegcellfills            =  F
+refine_on_particle_count    =  F
+restart                     =  F
+shockdetect                 =  F
+shocklowercfl               =  F
+summaryoutputonly           =  F
+threadblocklistbuild        =  F
+threaddriverblocklist       =  F
+threaddriverwithinblock     =  F
+threadeoswithinblock        =  F
+threadhydroblocklist        =  F
+threadhydrowithinblock      =  F
+threadraytracebuild         =  F
+threadwithinblockbuild      =  F
+typematchedxfer             =  T
+unbiased_geometry           =  F
+updatehydrofluxes           =  T
+useburn                     =  F
+usecollectivehdf5           =  T
+useconductivity             =  F
+usecool                     =  F
+usecosmology                =  F
+usedeleptonize              =  F
+usediffuse                  =  F
+usediffusecomputedtspecies  =  F
+usediffusecomputedttherm    =  F
+usediffusecomputedtvisc     =  F
+usediffusecomputedtmagnetic =  F
+useenergydeposition         =  F
+useflame                    =  F
+usegravity                  =  F
+useheat                     =  F
+useheatexchange             =  F
+usehydro                    =  T
+useincompns                 =  F
+useionize                   =  F
+uselegacylabels             =  T
+usemagneticresistivity      =  F
+usemassdiffusivity          =  F
+useopacity                  =  F
+useparticles                =  F
+useplasmastate              =  F
+usepolytrope                =  F
+useprimordialchemistry      =  F
+useprotonemission           =  F
+useprotonimaging            =  F
+useradtrans                 =  F
+usests                      =  F
+usestsfordiffusion          =  F
+usestir                     =  F
+usethomsonscattering        =  F
+usetreeray                  =  F
+useturb                     =  T
+useviscosity                =  F
+use_3dfullctu               =  T
+use_auxeinteqn              =  T
+use_avisc                   =  T [CHANGED]
+use_cma_advection           =  F
+use_cma_flattening          =  F
+use_flash_surr_blks_fill    =  T
+use_flattening              =  F
+use_gravhalfupdate          =  T
+use_hybridorder             =  F
+use_reduced_orrery          =  T
+use_steepening              =  F
+use_upwindtvd               =  F
+writestatsummary            =  T
+                                                                               
+ ==============================================================================
+                                                                               
+ Known units of measurement:
+                                                                               
+              Unit                          CGS Value                Base Unit
+  1                  cm                     1.0000                           cm
+  2                   s                     1.0000                            s
+  3                   g                     1.0000                            g
+  4                   K                     1.0000                            K
+  5                 esu                     1.0000                          esu
+  6                 mol                     1.0000                          mol
+  7                   m                     100.00                           cm
+  8                  km                    1.00000E+05                       cm
+  9                  pc                    3.08568E+18                       cm
+ 10                 kpc                    3.08568E+21                       cm
+ 11                 Mpc                    3.08568E+24                       cm
+ 12                 Gpc                    3.08568E+27                       cm
+ 13                Rsun                    6.96000E+10                       cm
+ 14                  AU                    1.49598E+13                       cm
+ 15                  yr                    3.15569E+07                        s
+ 16                 Myr                    3.15569E+13                        s
+ 17                 Gyr                    3.15569E+16                        s
+ 18                  kg                     1000.0                            g
+ 19                Msun                    1.98892E+33                        g
+ 20                 amu                    1.66054E-24                        g
+ 21                  eV                     11605.                            K
+ 22                   C                    2.99792E+09                      esu
+ 23                LFLY                    3.08568E+24                       cm
+ 24                TFLY                    2.05759E+17                        s
+ 25                MFLY                    9.88470E+45                        g
+ 26            clLength                    3.08568E+24                       cm
+ 27              clTime                    3.15569E+16                        s
+ 28              clMass                    1.98892E+48                        g
+ 29              clTemp                    1.16045E+07                        K
+-----------End of Units--------------------
+                                                                               
+ Known physical constants:
+                                                                               
+    Constant Name       Constant Value   cm       s        g        K        esu      mol
+  1              Newton    6.67408E-08   3.0     -2.0     -1.0      0.0      0.0      0.0    
+  2      speed of light    2.99792E+10   1.0     -1.0      0.0      0.0      0.0      0.0    
+  3              Planck    6.62607E-27   2.0     -1.0      1.0      0.0      0.0      0.0    
+  4     electron charge    4.80320E-10   0.0      0.0      0.0      0.0      1.0      0.0    
+  5       electron mass    9.10938E-28   0.0      0.0      1.0      0.0      0.0      0.0    
+  6         proton mass    1.67262E-24   0.0      0.0      1.0      0.0      0.0      0.0    
+  7      fine-structure    7.29735E-03   0.0      0.0      0.0      0.0      0.0      0.0    
+  8            Avogadro    6.02214E+23   0.0      0.0      0.0      0.0      0.0     -1.0    
+  9           Boltzmann    1.38065E-16   2.0     -2.0      1.0     -1.0      0.0      0.0    
+ 10  ideal gas constant    8.31446E+07   2.0     -2.0      1.0     -1.0      0.0     -1.0    
+ 11                Wien    0.28978       1.0      0.0      0.0      1.0      0.0      0.0    
+ 12    Stefan-Boltzmann    5.67037E-05   0.0     -3.0      1.0     -4.0      0.0      0.0    
+ 13  Radiation Constant    7.56572E-15  -1.0     -2.0      1.0     -4.0      0.0      0.0    
+ 14                  pi     3.1416       0.0      0.0      0.0      0.0      0.0      0.0    
+ 15                   e     2.7183       0.0      0.0      0.0      0.0      0.0      0.0    
+ 16               Euler    0.57722       0.0      0.0      0.0      0.0      0.0      0.0    
+ ==============================================================================
+                                                                               
+ Multifluid database: not configured in
+                                                                               
+ ==============================================================================
+ [ 10-09-2018  16:46:25.947 ] [gr_initGeometry] checking BCs for idir: 1
+ [ 10-09-2018  16:46:25.949 ] [gr_initGeometry] checking BCs for idir: 2
+ [ 10-09-2018  16:46:25.950 ] [gr_initGeometry] checking BCs for idir: 3
+ [ 10-09-2018  16:46:25.957 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:46:25.958 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 512
+ [GRID amr_refine_derefine] min blks 0    max blks 1    tot blks 512
+ [GRID amr_refine_derefine] min leaf blks 0    max leaf blks 1    tot leaf blks 512
+ [ 10-09-2018  16:46:25.972 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:46:26.245 ] [GRID gr_expandDomain]: iteration=1, create level=2
+ INFO: Grid_fillGuardCells is ignoring masking.
+ [ 10-09-2018  16:46:26.457 ] [mpi_amr_comm_setup]: buffer_dim_send=14301, buffer_dim_recv=14301
+ [ 10-09-2018  16:46:26.488 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:46:26.496 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 576
+ [GRID amr_refine_derefine] min blks 0    max blks 1    tot blks 576
+ [GRID amr_refine_derefine] min leaf blks 0    max leaf blks 1    tot leaf blks 568
+ [ 10-09-2018  16:46:26.519 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:46:26.624 ] [GRID gr_expandDomain]: iteration=2, create level=3
+ [ 10-09-2018  16:46:26.864 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:46:26.871 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 640
+ [GRID amr_refine_derefine] min blks 0    max blks 1    tot blks 640
+ [GRID amr_refine_derefine] min leaf blks 0    max leaf blks 1    tot leaf blks 624
+ [ 10-09-2018  16:46:26.894 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:46:26.971 ] [GRID gr_expandDomain]: iteration=3, create level=4
+ [ 10-09-2018  16:46:27.210 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:46:27.217 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 704
+ [GRID amr_refine_derefine] min blks 0    max blks 1    tot blks 704
+ [GRID amr_refine_derefine] min leaf blks 0    max leaf blks 1    tot leaf blks 680
+ [ 10-09-2018  16:46:27.238 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:46:27.297 ] [GRID gr_expandDomain]: iteration=4, create level=5
+ [ 10-09-2018  16:46:27.528 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:46:27.537 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 2304
+ [GRID amr_refine_derefine] min blks 2    max blks 5    tot blks 2304
+ [GRID amr_refine_derefine] min leaf blks 1    max leaf blks 3    tot leaf blks 2080
+ [ 10-09-2018  16:46:27.557 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:46:27.607 ] [GRID gr_expandDomain]: iteration=5, create level=6
+ [ 10-09-2018  16:46:28.233 ] [mpi_amr_comm_setup]: buffer_dim_send=35949, buffer_dim_recv=31285
+ [ 10-09-2018  16:46:28.316 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:46:28.328 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 3648
+ [GRID amr_refine_derefine] min blks 4    max blks 6    tot blks 3648
+ [GRID amr_refine_derefine] min leaf blks 2    max leaf blks 5    tot leaf blks 3256
+ [ 10-09-2018  16:46:28.362 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:46:28.386 ] [GRID gr_expandDomain]: iteration=6, create level=7
+ [ 10-09-2018  16:46:29.395 ] [mpi_amr_comm_setup]: buffer_dim_send=43957, buffer_dim_recv=32121
+ [ 10-09-2018  16:46:29.479 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:46:29.493 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 7040
+ [GRID amr_refine_derefine] min blks 8    max blks 11    tot blks 7040
+ [GRID amr_refine_derefine] min leaf blks 6    max leaf blks 9    tot leaf blks 6224
+ [ 10-09-2018  16:46:29.531 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:46:29.543 ] [GRID gr_expandDomain]: iteration=7, create level=7
+ [ 10-09-2018  16:46:31.343 ] [mpi_amr_comm_setup]: buffer_dim_send=67101, buffer_dim_recv=45453
+ [ 10-09-2018  16:46:31.510 ] [GRID gr_expandDomain]: iteration=8, create level=7
+ [ 10-09-2018  16:46:33.501 ] [GRID gr_expandDomain]: iteration=9, create level=7
+ [ 10-09-2018  16:46:35.291 ] memory: /proc vsize    (MB):     3437.89 (min)       3675.11 (max)       3552.61 (avg)
+ [ 10-09-2018  16:46:35.292 ] memory: /proc rss      (MB):       92.55 (min)         98.74 (max)         94.40 (avg)
+ [ 10-09-2018  16:46:35.293 ] memory: /proc vsize    (MB):     3437.89 (min)       3675.11 (max)       3552.61 (avg)
+ [ 10-09-2018  16:46:35.294 ] memory: /proc rss      (MB):       92.61 (min)         98.76 (max)         94.46 (avg)
+ [ 10-09-2018  16:46:35.296 ] memory: /proc vsize    (MB):     3437.89 (min)       3675.11 (max)       3552.61 (avg)
+ [ 10-09-2018  16:46:35.297 ] memory: /proc rss      (MB):       92.63 (min)         98.79 (max)         94.48 (avg)
+ [ 10-09-2018  16:46:35.418 ] [IO_writeCheckpoint] open: type=checkpoint name=sedov_hdf5_chk_0000
+ [ 10-09-2018  16:46:43.472 ] [IO_writeCheckpoint] close: type=checkpoint name=sedov_hdf5_chk_0000
+ [ 10-09-2018  16:46:43.493 ] [IO_writePlotfile] open: type=plotfile name=sedov_hdf5_plt_cnt_0000
+ [ 10-09-2018  16:46:48.266 ] [IO_writePlotfile] close: type=plotfile name=sedov_hdf5_plt_cnt_0000
+ [ 10-09-2018  16:46:48.267 ] memory: /proc vsize    (MB):     3437.89 (min)       3675.11 (max)       3553.54 (avg)
+ [ 10-09-2018  16:46:48.268 ] memory: /proc rss      (MB):       92.79 (min)        106.13 (max)         94.69 (avg)
+ [ 10-09-2018  16:46:48.268 ] [Driver_evolveFlash]: Entering evolution loop
+ [ 10-09-2018  16:46:48.269 ] step: n=1 t=0.000000E+00 dt=1.000000E-10
+ [ 10-09-2018  16:46:48.605 ] step: n=2 t=1.000000E-10 dt=2.000000E-10
+ [ 10-09-2018  16:46:48.991 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:46:49.002 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 7424
+ [GRID amr_refine_derefine] min blks 8    max blks 11    tot blks 7424
+ [GRID amr_refine_derefine] min leaf blks 6    max leaf blks 9    tot leaf blks 6560
+ [ 10-09-2018  16:46:49.063 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:46:49.092 ] step: n=3 t=3.000000E-10 dt=4.000000E-10
+ [ 10-09-2018  16:46:49.102 ] [mpi_amr_comm_setup]: buffer_dim_send=72733, buffer_dim_recv=57817
+ [ 10-09-2018  16:46:49.390 ] step: n=4 t=7.000000E-10 dt=8.000000E-10
+ [ 10-09-2018  16:46:49.880 ] step: n=5 t=1.500000E-09 dt=1.600000E-09
+ [ 10-09-2018  16:46:50.165 ] step: n=6 t=3.100000E-09 dt=3.200000E-09
+ [ 10-09-2018  16:46:50.550 ] step: n=7 t=6.300000E-09 dt=6.400000E-09
+ [ 10-09-2018  16:46:50.833 ] step: n=8 t=1.270000E-08 dt=1.280000E-08
+ [ 10-09-2018  16:46:51.213 ] step: n=9 t=2.550000E-08 dt=2.560000E-08
+ [ 10-09-2018  16:46:51.503 ] step: n=10 t=5.110000E-08 dt=5.120000E-08
+ [ 10-09-2018  16:46:51.889 ] step: n=11 t=1.023000E-07 dt=1.024000E-07
+ [ 10-09-2018  16:46:52.171 ] step: n=12 t=2.047000E-07 dt=2.048000E-07
+ [ 10-09-2018  16:46:52.554 ] step: n=13 t=4.095000E-07 dt=4.096000E-07
+ [ 10-09-2018  16:46:52.838 ] step: n=14 t=8.191000E-07 dt=8.192000E-07
+ [ 10-09-2018  16:46:53.227 ] step: n=15 t=1.638300E-06 dt=8.072573E-07
+ [ 10-09-2018  16:46:53.510 ] step: n=16 t=2.445557E-06 dt=7.847355E-07
+ [ 10-09-2018  16:46:53.892 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:46:53.904 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 7808
+ [GRID amr_refine_derefine] min blks 9    max blks 12    tot blks 7808
+ [GRID amr_refine_derefine] min leaf blks 6    max leaf blks 10    tot leaf blks 6896
+ [ 10-09-2018  16:46:53.927 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:46:53.990 ] step: n=17 t=3.230293E-06 dt=7.639649E-07
+ [ 10-09-2018  16:46:54.001 ] [mpi_amr_comm_setup]: buffer_dim_send=66133, buffer_dim_recv=57817
+ [ 10-09-2018  16:46:54.299 ] step: n=18 t=3.994258E-06 dt=7.449686E-07
+ [ 10-09-2018  16:46:54.710 ] step: n=19 t=4.739226E-06 dt=7.280339E-07
+ [ 10-09-2018  16:46:55.002 ] step: n=20 t=5.467260E-06 dt=7.118557E-07
+ [ 10-09-2018  16:46:55.427 ] step: n=21 t=6.179116E-06 dt=6.967687E-07
+ [ 10-09-2018  16:46:55.718 ] step: n=22 t=6.875885E-06 dt=6.834342E-07
+ [ 10-09-2018  16:46:56.117 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:46:56.128 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 8192
+ [GRID amr_refine_derefine] min blks 9    max blks 13    tot blks 8192
+ [GRID amr_refine_derefine] min leaf blks 7    max leaf blks 10    tot leaf blks 7232
+ [ 10-09-2018  16:46:56.149 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:46:56.184 ] step: n=23 t=7.559319E-06 dt=6.713381E-07
+ [ 10-09-2018  16:46:56.195 ] [mpi_amr_comm_setup]: buffer_dim_send=70357, buffer_dim_recv=65253
+ [ 10-09-2018  16:46:56.514 ] step: n=24 t=8.230657E-06 dt=6.590246E-07
+ [ 10-09-2018  16:46:56.979 ] step: n=25 t=8.889681E-06 dt=6.475751E-07
+ [ 10-09-2018  16:46:57.312 ] step: n=26 t=9.537257E-06 dt=6.355466E-07
+ [ 10-09-2018  16:46:57.746 ] step: n=27 t=1.017280E-05 dt=6.248460E-07
+ [ 10-09-2018  16:46:58.077 ] step: n=28 t=1.079765E-05 dt=6.153441E-07
+ [ 10-09-2018  16:46:58.512 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:46:58.523 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 8576
+ [GRID amr_refine_derefine] min blks 10    max blks 13    tot blks 8576
+ [GRID amr_refine_derefine] min leaf blks 7    max leaf blks 11    tot leaf blks 7568
+ [ 10-09-2018  16:46:58.540 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:46:58.578 ] step: n=29 t=1.141299E-05 dt=6.069896E-07
+ [ 10-09-2018  16:46:58.587 ] [mpi_amr_comm_setup]: buffer_dim_send=71061, buffer_dim_recv=65253
+ [ 10-09-2018  16:46:58.912 ] step: n=30 t=1.201998E-05 dt=5.994026E-07
+ [ 10-09-2018  16:46:59.346 ] step: n=31 t=1.261939E-05 dt=5.922299E-07
+ [ 10-09-2018  16:46:59.670 ] step: n=32 t=1.321162E-05 dt=5.856605E-07
+ [ 10-09-2018  16:47:00.115 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:00.129 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 8960
+ [GRID amr_refine_derefine] min blks 10    max blks 14    tot blks 8960
+ [GRID amr_refine_derefine] min leaf blks 8    max leaf blks 11    tot leaf blks 7904
+ [ 10-09-2018  16:47:00.151 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:00.181 ] step: n=33 t=1.379728E-05 dt=5.797833E-07
+ [ 10-09-2018  16:47:00.190 ] [mpi_amr_comm_setup]: buffer_dim_send=74141, buffer_dim_recv=71721
+ [ 10-09-2018  16:47:00.536 ] step: n=34 t=1.437706E-05 dt=5.746058E-07
+ [ 10-09-2018  16:47:01.014 ] step: n=35 t=1.495166E-05 dt=5.701075E-07
+ [ 10-09-2018  16:47:01.375 ] step: n=36 t=1.552177E-05 dt=5.663629E-07
+ [ 10-09-2018  16:47:01.848 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:01.866 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 9344
+ [GRID amr_refine_derefine] min blks 11    max blks 14    tot blks 9344
+ [GRID amr_refine_derefine] min leaf blks 8    max leaf blks 11    tot leaf blks 8240
+ [ 10-09-2018  16:47:01.895 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:01.926 ] step: n=37 t=1.608814E-05 dt=5.634537E-07
+ [ 10-09-2018  16:47:02.283 ] step: n=38 t=1.665159E-05 dt=5.613434E-07
+ [ 10-09-2018  16:47:02.844 ] step: n=39 t=1.721293E-05 dt=5.597819E-07
+ [ 10-09-2018  16:47:03.202 ] step: n=40 t=1.777271E-05 dt=5.586939E-07
+ [ 10-09-2018  16:47:03.692 ] step: n=41 t=1.833141E-05 dt=5.580149E-07
+ [ 10-09-2018  16:47:04.078 ] step: n=42 t=1.888942E-05 dt=5.577036E-07
+ [ 10-09-2018  16:47:04.562 ] step: n=43 t=1.944713E-05 dt=5.574627E-07
+ [ 10-09-2018  16:47:04.922 ] step: n=44 t=2.000459E-05 dt=5.572907E-07
+ [ 10-09-2018  16:47:05.447 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:05.457 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 9536
+ [GRID amr_refine_derefine] min blks 11    max blks 14    tot blks 9536
+ [GRID amr_refine_derefine] min leaf blks 8    max leaf blks 12    tot leaf blks 8408
+ [ 10-09-2018  16:47:05.477 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:05.508 ] step: n=45 t=2.056188E-05 dt=5.570739E-07
+ [ 10-09-2018  16:47:05.878 ] step: n=46 t=2.111895E-05 dt=5.567063E-07
+ [ 10-09-2018  16:47:06.372 ] step: n=47 t=2.167566E-05 dt=5.563736E-07
+ [ 10-09-2018  16:47:06.734 ] step: n=48 t=2.223203E-05 dt=5.560595E-07
+ [ 10-09-2018  16:47:07.232 ] step: n=49 t=2.278809E-05 dt=5.549822E-07
+ [ 10-09-2018  16:47:07.594 ] step: n=50 t=2.334308E-05 dt=5.540824E-07
+ [ 10-09-2018  16:47:08.081 ] step: n=51 t=2.389716E-05 dt=5.535012E-07
+ [ 10-09-2018  16:47:08.444 ] step: n=52 t=2.445066E-05 dt=5.529334E-07
+ [ 10-09-2018  16:47:08.931 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:08.942 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 9728
+ [GRID amr_refine_derefine] min blks 11    max blks 14    tot blks 9728
+ [GRID amr_refine_derefine] min leaf blks 8    max leaf blks 12    tot leaf blks 8576
+ [ 10-09-2018  16:47:08.960 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:08.991 ] step: n=53 t=2.500359E-05 dt=5.523827E-07
+ [ 10-09-2018  16:47:09.001 ] [mpi_amr_comm_setup]: buffer_dim_send=73305, buffer_dim_recv=71721
+ [ 10-09-2018  16:47:09.358 ] step: n=54 t=2.555598E-05 dt=5.518959E-07
+ [ 10-09-2018  16:47:09.878 ] step: n=55 t=2.610787E-05 dt=5.513893E-07
+ [ 10-09-2018  16:47:10.250 ] step: n=56 t=2.665926E-05 dt=5.508981E-07
+ [ 10-09-2018  16:47:10.754 ] step: n=57 t=2.721016E-05 dt=5.504588E-07
+ [ 10-09-2018  16:47:11.121 ] step: n=58 t=2.776062E-05 dt=5.501342E-07
+ [ 10-09-2018  16:47:11.633 ] step: n=59 t=2.831075E-05 dt=5.499233E-07
+ [ 10-09-2018  16:47:11.998 ] step: n=60 t=2.886067E-05 dt=5.493004E-07
+ [ 10-09-2018  16:47:12.520 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:12.532 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 10304
+ [GRID amr_refine_derefine] min blks 12    max blks 15    tot blks 10304
+ [GRID amr_refine_derefine] min leaf blks 9    max leaf blks 13    tot leaf blks 9080
+ [ 10-09-2018  16:47:12.559 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:12.617 ] step: n=61 t=2.940998E-05 dt=5.484899E-07
+ [ 10-09-2018  16:47:12.628 ] [mpi_amr_comm_setup]: buffer_dim_send=72161, buffer_dim_recv=72557
+ [ 10-09-2018  16:47:13.016 ] step: n=62 t=2.995847E-05 dt=5.478749E-07
+ [ 10-09-2018  16:47:13.588 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:13.605 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 10688
+ [GRID amr_refine_derefine] min blks 12    max blks 16    tot blks 10688
+ [GRID amr_refine_derefine] min leaf blks 10    max leaf blks 13    tot leaf blks 9416
+ [ 10-09-2018  16:47:13.656 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:13.697 ] step: n=63 t=3.050634E-05 dt=5.474440E-07
+ [ 10-09-2018  16:47:13.711 ] [mpi_amr_comm_setup]: buffer_dim_send=83117, buffer_dim_recv=77617
+ [ 10-09-2018  16:47:14.119 ] step: n=64 t=3.105378E-05 dt=5.470023E-07
+ [ 10-09-2018  16:47:14.694 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:14.706 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 11840
+ [GRID amr_refine_derefine] min blks 14    max blks 17    tot blks 11840
+ [GRID amr_refine_derefine] min leaf blks 11    max leaf blks 14    tot leaf blks 10424
+ [ 10-09-2018  16:47:14.737 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:14.811 ] step: n=65 t=3.160079E-05 dt=5.465505E-07
+ [ 10-09-2018  16:47:14.823 ] [mpi_amr_comm_setup]: buffer_dim_send=85889, buffer_dim_recv=81973
+ [ 10-09-2018  16:47:15.312 ] step: n=66 t=3.214734E-05 dt=5.461133E-07
+ [ 10-09-2018  16:47:15.986 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:15.997 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 12224
+ [GRID amr_refine_derefine] min blks 14    max blks 17    tot blks 12224
+ [GRID amr_refine_derefine] min leaf blks 11    max leaf blks 15    tot leaf blks 10760
+ [ 10-09-2018  16:47:16.021 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:16.052 ] step: n=67 t=3.269345E-05 dt=5.456478E-07
+ [ 10-09-2018  16:47:16.096 ] [mpi_amr_comm_setup]: buffer_dim_send=77749, buffer_dim_recv=81973
+ [ 10-09-2018  16:47:16.548 ] step: n=68 t=3.323910E-05 dt=5.451853E-07
+ [ 10-09-2018  16:47:17.278 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:17.290 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 12800
+ [GRID amr_refine_derefine] min blks 15    max blks 19    tot blks 12800
+ [GRID amr_refine_derefine] min leaf blks 12    max leaf blks 15    tot leaf blks 11264
+ [ 10-09-2018  16:47:17.350 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:17.402 ] step: n=69 t=3.378428E-05 dt=5.447480E-07
+ [ 10-09-2018  16:47:17.415 ] [mpi_amr_comm_setup]: buffer_dim_send=73965, buffer_dim_recv=80565
+ [ 10-09-2018  16:47:17.908 ] step: n=70 t=3.432903E-05 dt=5.443473E-07
+ [ 10-09-2018  16:47:18.555 ] step: n=71 t=3.487338E-05 dt=5.439960E-07
+ [ 10-09-2018  16:47:19.044 ] step: n=72 t=3.541737E-05 dt=5.436952E-07
+ [ 10-09-2018  16:47:19.694 ] step: n=73 t=3.596107E-05 dt=5.434495E-07
+ [ 10-09-2018  16:47:20.168 ] step: n=74 t=3.650452E-05 dt=5.432618E-07
+ [ 10-09-2018  16:47:20.797 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:20.808 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 12928
+ [GRID amr_refine_derefine] min blks 15    max blks 19    tot blks 12928
+ [GRID amr_refine_derefine] min leaf blks 12    max leaf blks 16    tot leaf blks 11376
+ [ 10-09-2018  16:47:20.829 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:20.867 ] step: n=75 t=3.704778E-05 dt=5.431324E-07
+ [ 10-09-2018  16:47:21.364 ] step: n=76 t=3.759091E-05 dt=5.430744E-07
+ [ 10-09-2018  16:47:22.034 ] step: n=77 t=3.813399E-05 dt=5.430064E-07
+ [ 10-09-2018  16:47:22.506 ] step: n=78 t=3.867699E-05 dt=5.424612E-07
+ [ 10-09-2018  16:47:23.218 ] step: n=79 t=3.921946E-05 dt=5.419180E-07
+ [ 10-09-2018  16:47:23.691 ] step: n=80 t=3.976137E-05 dt=5.415223E-07
+ [ 10-09-2018  16:47:24.338 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:24.350 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 13312
+ [GRID amr_refine_derefine] min blks 15    max blks 19    tot blks 13312
+ [GRID amr_refine_derefine] min leaf blks 12    max leaf blks 16    tot leaf blks 11712
+ [ 10-09-2018  16:47:24.373 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:24.405 ] step: n=81 t=4.030290E-05 dt=5.412613E-07
+ [ 10-09-2018  16:47:24.415 ] [mpi_amr_comm_setup]: buffer_dim_send=73789, buffer_dim_recv=72117
+ [ 10-09-2018  16:47:24.897 ] step: n=82 t=4.084416E-05 dt=5.410184E-07
+ [ 10-09-2018  16:47:25.579 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:25.601 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 13696
+ [GRID amr_refine_derefine] min blks 16    max blks 20    tot blks 13696
+ [GRID amr_refine_derefine] min leaf blks 13    max leaf blks 16    tot leaf blks 12048
+ [ 10-09-2018  16:47:25.634 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:25.672 ] step: n=83 t=4.138518E-05 dt=5.407978E-07
+ [ 10-09-2018  16:47:26.179 ] step: n=84 t=4.192597E-05 dt=5.406190E-07
+ [ 10-09-2018  16:47:26.853 ] [GRID amr_refine_derefine]: initiating refinement
+ [ 10-09-2018  16:47:26.865 ] [GRID amr_refine_derefine]: redist. phase.  tot blks requested: 14080
+ [GRID amr_refine_derefine] min blks 16    max blks 20    tot blks 14080
+ [GRID amr_refine_derefine] min leaf blks 13    max leaf blks 17    tot leaf blks 12384
+ [ 10-09-2018  16:47:26.895 ] [GRID amr_refine_derefine]: refinement complete
+ [ 10-09-2018  16:47:26.929 ] step: n=85 t=4.246659E-05 dt=5.403134E-07
+ [ 10-09-2018  16:47:26.941 ] [mpi_amr_comm_setup]: buffer_dim_send=90817, buffer_dim_recv=84481
+ [ 10-09-2018  16:47:27.440 ] step: n=86 t=4.300691E-05 dt=5.400234E-07
+ [ 10-09-2018  16:47:28.128 ] step: n=87 t=4.354693E-05 dt=5.397598E-07
+ [ 10-09-2018  16:47:28.626 ] step: n=88 t=4.408669E-05 dt=5.395166E-07
+ [ 10-09-2018  16:47:29.336 ] step: n=89 t=4.462621E-05 dt=5.392952E-07
+ [ 10-09-2018  16:47:29.840 ] step: n=90 t=4.516550E-05 dt=5.391299E-07
+ [ 10-09-2018  16:47:30.553 ] step: n=91 t=4.570463E-05 dt=5.389577E-07
+ [ 10-09-2018  16:47:31.058 ] step: n=92 t=4.624359E-05 dt=5.388168E-07
+ [ 10-09-2018  16:47:31.820 ] step: n=93 t=4.678241E-05 dt=5.387182E-07
+ [ 10-09-2018  16:47:32.318 ] step: n=94 t=4.732112E-05 dt=5.386560E-07
+ [ 10-09-2018  16:47:33.002 ] step: n=95 t=4.785978E-05 dt=5.386673E-07
+ [ 10-09-2018  16:47:33.511 ] step: n=96 t=4.839845E-05 dt=5.386988E-07
+ [ 10-09-2018  16:47:34.202 ] step: n=97 t=4.893715E-05 dt=5.387696E-07
+ [ 10-09-2018  16:47:34.708 ] step: n=98 t=4.947592E-05 dt=5.388917E-07
+ [ 10-09-2018  16:47:35.381 ] step: n=99 t=5.001481E-05 dt=5.390562E-07
+ [ 10-09-2018  16:47:35.883 ] step: n=100 t=5.055386E-05 dt=5.392889E-07
+ [ 10-09-2018  16:47:36.622 ] [Driver_evolveFlash]: Exiting evolution loop
+ [ 10-09-2018  16:47:36.725 ] [IO_writeCheckpoint] open: type=checkpoint name=sedov_hdf5_chk_0001
+ [ 10-09-2018  16:47:46.862 ] [IO_writeCheckpoint] close: type=checkpoint name=sedov_hdf5_chk_0001
+ [ 10-09-2018  16:47:46.886 ] [IO_writePlotfile] open: type=plotfile name=sedov_forced_hdf5_plt_cnt_0000
+ [ 10-09-2018  16:47:52.173 ] [IO_writePlotfile] close: type=plotfile name=sedov_forced_hdf5_plt_cnt_0000
+ [ 10-09-2018  16:47:52.174 ] memory: /proc vsize    (MB):     3451.64 (min)       4003.18 (max)       3702.44 (avg)
+ [ 10-09-2018  16:47:52.175 ] memory: /proc rss      (MB):       96.62 (min)        112.00 (max)        101.05 (avg)
+ ==============================================================================
+ perf_summary: code performance summary for process             0
+                      beginning : 10-09-2018  16:46:20
+                         ending : 10-09-2018  16:47:52
+   seconds in monitoring period :               91.552
+      number of evolution steps :                  100
+ ------------------------------------------------------------------------------
+ accounting unit                       time sec  num calls   secs avg  time pct
+ ------------------------------------------------------------------------------
+ initialization                         27.645      1          27.645    30.196
+  eos                                    0.004      9           0.000     0.004
+  Guardcell total                        0.973      8           0.122     1.063
+   guardcell Barrier                     0.768      8           0.096     0.839
+   guardcell internal                    0.204      8           0.026     0.223
+    amr_guardcell                        0.200      8           0.025     0.219
+    eos gc                               0.000      8           0.000     0.000
+  writeCheckpoint                        8.143      1           8.143     8.895
+   restrictAll                           0.077      1           0.077     0.084
+  writePlotfile                          4.793      1           4.793     5.235
+ writeCheckpoint                        10.239      1          10.239    11.184
+  restrictAll                            0.084      1           0.084     0.092
+ writePlotfile                           5.310      1           5.310     5.800
+ evolution                              48.353      1          48.353    52.814
+  cosmology                              0.000    200           0.000     0.000
+  Hydro                                 38.702    100           0.387    42.273
+   hydro_unsplit                        38.702    100           0.387    42.273
+    Head                                 5.167    100           0.052     5.643
+     Guardcell total                     5.166    100           0.052     5.643
+      guardcell Barrier                  0.010    100           0.000     0.011
+      guardcell internal                 5.156    100           0.052     5.632
+       amr_guardcell                     5.005    100           0.050     5.467
+       eos gc                            0.011    100           0.000     0.012
+    RiemannState                        25.513   1226           0.021    27.867
+    getFaceFlux                          1.178   1226           0.001     1.286
+    unsplitUpdate                        0.186   2452           0.000     0.203
+    conserveFluxes                       5.660    100           0.057     6.182
+    tail                                 0.000    100           0.000     0.000
+  sourceTerms                            0.000    100           0.000     0.000
+  Particles_advance                      0.000    100           0.000     0.000
+  Gravity potential                      0.000    100           0.000     0.000
+  diagnostics                            0.000    100           0.000     0.000
+  IO_output                              0.699    200           0.003     0.763
+   diagnostics                           0.523    200           0.003     0.572
+  Grid_updateRefinement                  8.746    100           0.087     9.553
+   eos                                   0.028     17           0.002     0.031
+   tree                                  8.717    100           0.087     9.521
+    markRefineDerefine                   2.719     50           0.054     2.970
+     Guardcell total                     2.470     50           0.049     2.698
+      guardcell Barrier                  0.005     50           0.000     0.006
+      guardcell internal                 2.464     50           0.049     2.692
+       amr_guardcell                     2.382     50           0.048     2.602
+       eos gc                            0.005     50           0.000     0.006
+    amr_refine_derefine                  4.307     50           0.086     4.705
+    updateData                           0.001     50           0.000     0.001
+   updateParticleRefinement              0.000     50           0.000     0.000
+  Driver_computeDt                       0.081    100           0.001     0.089
+ ==============================================================================
+ ==============================================================================
+ perf_summary: code performance summary statistics
+                      beginning : 10-09-2018  16:46:20
+                         ending : 10-09-2018  16:47:52
+   seconds in monitoring period :               91.552
+      number of evolution steps :                  100
+ ------------------------------------------------------------------------------
+ accounting unit                  max/proc (s)  min/proc (s) avg/proc (s)   num calls
+ ------------------------------------------------------------------------------
+ initialization                         27.645        27.640       27.643           1
+  eos                                    0.004         0.002        0.004           9
+  Guardcell total                        3.702         0.594        1.958           8
+   guardcell Barrier                     3.247         0.368        1.672           8
+   guardcell internal                    0.467         0.132        0.286           8
+    amr_guardcell                        0.457         0.130        0.277           8
+    eos gc                               0.012         0.000        0.006           8
+  writeCheckpoint                        8.143         8.142        8.142           1
+   restrictAll                           0.077         0.077        0.077           1
+  writePlotfile                          4.793         4.790        4.791           1
+ writeCheckpoint                        10.239        10.237       10.237           1
+  restrictAll                            0.084         0.084        0.084           1
+ writePlotfile                           5.310         5.307        5.308           1
+ evolution                              48.355        48.353       48.355           1
+  cosmology                              0.000         0.000        0.000         200
+  Hydro                                 38.917        38.662       38.819         100
+   hydro_unsplit                        38.917        38.662       38.819         100
+    Head                                 9.305         4.852        7.557         100
+     Guardcell total                     9.304         4.851        7.556         100
+      guardcell Barrier                  0.136         0.010        0.133         100
+      guardcell internal                 9.169         4.718        7.423         100
+       amr_guardcell                     8.666         4.557        6.964         100
+       eos gc                            0.561         0.010        0.285         100
+    RiemannState                        25.513        15.030       22.776        1226
+    getFaceFlux                          1.224         0.886        1.124        1226
+    unsplitUpdate                        0.192         0.144        0.178        2452
+    conserveFluxes                      13.777         3.243        6.219         100
+    tail                                 0.000         0.000        0.000         100
+  sourceTerms                            0.000         0.000        0.000         100
+  Particles_advance                      0.000         0.000        0.000         100
+  Gravity potential                      0.000         0.000        0.000         100
+  diagnostics                            0.000         0.000        0.000         100
+  IO_output                              0.865         0.612        0.708         200
+   diagnostics                           0.686         0.432        0.530         200
+  Grid_updateRefinement                  8.746         8.736        8.742         100
+   eos                                   0.028         0.019        0.024          17
+   tree                                  8.718         8.716        8.717         100
+    markRefineDerefine                   5.023         2.574        4.498          50
+     Guardcell total                     4.486         2.313        3.623          50
+      guardcell Barrier                  0.006         0.004        0.005          50
+      guardcell internal                 4.481         2.309        3.618          50
+       amr_guardcell                     4.199         2.202        3.394          50
+       eos gc                            0.254         0.005        0.138          50
+    amr_refine_derefine                  4.453         2.001        2.526          50
+    updateData                           0.001         0.001        0.001          50
+   updateParticleRefinement              0.000         0.000        0.000          50
+  Driver_computeDt                       0.088         0.056        0.081         100
+ ==============================================================================
+ [ 10-09-2018  16:47:52.199 ] LOGFILE_END: FLASH run complete.
