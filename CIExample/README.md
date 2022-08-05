@@ -1,5 +1,5 @@
 # morpheus
-[![Build Status](https://travis-ci.org/adubey64/morph.svg?branch=master)](https://travis-ci.org/adubey64/morph)  
+[![Build Status](https://travis-ci.com/adubey64/morph.svg?branch=master)](https://travis-ci.com/adubey64/morph)  
 A tutorial for CI and code coverage
 
 gcov tutorial
