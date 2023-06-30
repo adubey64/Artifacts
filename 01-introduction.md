@@ -20,7 +20,7 @@ keypoints:
 * In this module we will cover general design principles and those that are tailored for scientific software
 * We will also work through two use cases
 
-![](img/techdebt.png)
+![](img/tmp0.png)
 
 definition from https://enterprisersproject\.com/article/2020/6/technical\-debt\-explained\-plain\-english
 
